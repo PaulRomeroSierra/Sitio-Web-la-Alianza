@@ -1,0 +1,323 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+body {
+    margin: 0 10% 5% 10%;
+    max-width: 1063px;
+    background-color: rgb(252 251 248)
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+}
+.header__nav > svg {
+    display: none;
+}
+.header__nav--links {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container_img {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.container_img>img {
+    width: 100%;
+    aspect-ratio: 359/258;
+    height: 450px;
+    border-radius: 12px;
+}
+
+.container_img--title,
+.container_img--text,
+.container_img--button {
+    position: absolute;
+    text-align: center;
+}
+
+.container_img--title {
+    margin: auto;
+    align-content: center;
+    width: 100%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: rgb(255, 251, 200);
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.container_img--text {
+    width: 100%;
+    top: 53%;
+    font-family: sans-serif;
+    color: rgb(255, 251, 243);
+    font-weight: bold;
+}
+
+.container_img--button {
+    margin: auto;
+    width: 100%;
+    top: 60%;
+}
+
+.container_img--button>button {
+    background-color: rgb(255, 175, 25);
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 200px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/*==========================================================*/
+.container__about-us {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 25px;
+}
+
+.container__about-us--header {
+    margin: 20px;
+}
+
+.container__about-us--title {
+    color: rgb(55, 38, 38);
+    font-size: 35px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.container__about-us--text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    max-width: 600px;
+    line-height: 1.8;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/*===============================================*/
+.container__why-us {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.container__why-us--title {
+    color: rgb(55, 38, 38);
+    font-size: 35px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.container__why-us--text {
+    max-width: 720px;
+    line-height: 1.8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+
+}
+
+/*==============================================*/
+.container__boxes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.container__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid #0001;
+    padding: 10px;
+    flex-grow: 1px;
+    border-radius: 5px;
+}
+
+.container__itemUno--title,
+.container__itemDos--title,
+.container__itemTres--title,
+.container__itemCuatro--title {
+    color: rgb(55, 38, 38);
+    line-height: 1.8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.container__itemUno--text,
+.container__itemDos--text,
+.container__itemTres--text,
+.container__itemCuatro--text {
+    color: rgb(108, 64, 31);
+}
+
+/*=================================================*/
+.ourFarm__title {
+    color: rgb(55, 38, 38);
+    font-size: 25px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.container__ourFarm--img {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+}
+
+.container__img {
+    display: flex;
+    width: 100px;
+    height: 200px;
+    flex-grow: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.container__img>img {
+    width: 100%;
+    height: auto;
+}
+
+.hen {
+    aspect-ratio: 359/228;
+}
+
+.eggs {
+    aspect-ratio: 3/2;
+}
+
+.farm {
+    aspect-ratio: 16/9;
+}
+
+/*========================================*/
+.container__opinion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.container__opinion-title {
+    color: rgb(55, 38, 38);
+    font-size: 20px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.opinions__customers {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.container__customers--items {
+    width: 100px;
+    flex-grow: 5;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.5;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: lighter;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #0001;
+}
+
+span {
+    font-family: "Work Sans", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 12px;
+    border-top: 1px solid #0001;
+    width: 100%;
+}
+
+.footer__nav>a {
+    display: flex;
+    text-decoration: none;
+    color: rgb(149, 114, 69);
+}
+
+.footer__nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.footer__items {
+    flex-grow: 1;
+    color: rgb(149, 114, 69);
+}
+
+/*==========MEDIA QUERIES================*/
+@media screen and (max-width: 600px) {
+    .header__nav--links {
+        display: none;
+    }
+
+    .header__nav > svg {
+        display: block;
+    }
+}
