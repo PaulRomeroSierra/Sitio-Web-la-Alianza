@@ -216,6 +216,7 @@ button:hover {
     flex-grow: 1;
     border-radius: 5px;
     overflow: hidden;
+    width: 30%;
 }
 
 .container__img>img {
@@ -224,15 +225,15 @@ button:hover {
 }
 
 .hen {
-    aspect-ratio: 359/228;
+    flex-grow: 2;
 }
 
 .eggs {
-    aspect-ratio: 3/2;
+    flex-grow: 1;
 }
 
 .farm {
-    aspect-ratio: 16/9;
+    flex-grow: 1;
 }
 
 /*========================================*/
@@ -259,8 +260,7 @@ button:hover {
 }
 
 .container__customers--items {
-    width: 100px;
-    flex-grow: 5;
+    flex-grow: 1;
     border: 1px solid black;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -321,8 +321,15 @@ span {
     .container__boxes{
         flex-direction: column;
     }
+    .container__img{
+        width: 100%;
+    }
     .container__ourFarm--img{
         flex-direction: column;
         width: 100%;
+    }
+    .opinions__customers{
+        flex-direction: column;
+        flex-grow: 1;
     }
 }
