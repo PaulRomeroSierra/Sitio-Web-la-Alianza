@@ -213,8 +213,6 @@ button:hover {
 
 .container__img {
     display: flex;
-    width: 100px;
-    height: 200px;
     flex-grow: 1;
     border-radius: 5px;
     overflow: hidden;
@@ -312,12 +310,19 @@ span {
 }
 
 /*==========MEDIA QUERIES================*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
     .header__nav--links {
         display: none;
     }
 
     .header__nav > svg {
         display: block;
+    }
+    .container__boxes{
+        flex-direction: column;
+    }
+    .container__ourFarm--img{
+        flex-direction: column;
+        width: 100%;
     }
 }
