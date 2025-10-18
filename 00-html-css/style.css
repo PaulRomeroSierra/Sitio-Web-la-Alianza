@@ -26,9 +26,11 @@ body {
     justify-content: space-around;
     width: 50%;
 }
-.header__nav > svg {
+
+.header__nav>svg {
     display: none;
 }
+
 .header__nav--links {
     text-decoration: none;
     color: black;
@@ -285,7 +287,7 @@ span {
 .footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px;
     gap: 12px;
     border-top: 1px solid #0001;
@@ -303,7 +305,10 @@ span {
     justify-content: space-around;
     gap: 5px;
 }
-
+.copyright{
+    width: 50%;
+    text-align: right;
+}
 .footer__items {
     flex-grow: 1;
     color: rgb(149, 114, 69);
@@ -315,21 +320,41 @@ span {
         display: none;
     }
 
-    .header__nav > svg {
+    .header__nav>svg {
         display: block;
     }
-    .container__boxes{
+
+    .container__boxes {
         flex-direction: column;
     }
-    .container__img{
+
+    .container__img {
         width: 100%;
     }
-    .container__ourFarm--img{
+
+    .container__ourFarm--img {
         flex-direction: column;
         width: 100%;
     }
-    .opinions__customers{
+
+    .opinions__customers {
         flex-direction: column;
         flex-grow: 1;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .container_img--title {
+        font-size: 35px;
+        top: 30%;
+    }
+
+    .container_img--button {
+        top: 65%;
+    }
+    .copyright{
+        width: 100%;
     }
 }
