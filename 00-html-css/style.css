@@ -322,6 +322,7 @@ span {
 
     .header__nav>svg {
         display: block;
+        cursor: pointer;
     }
 
     .container__boxes {
@@ -358,4 +359,9 @@ span {
         width: 100%;
         text-align: center;
     }
+}
+/*===========================ABOUT US========================*/
+.our_farm{
+    display: flex;
+    flex-direction: column;
 }
