@@ -5,9 +5,14 @@
 }
 
 body {
-    margin: 0 10% 5% 10%;
-    max-width: 1063px;
-    background-color: rgb(252 251 248)
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 1200px;
+    background-color: rgb(252 251 248);
+    padding: 30px;
+    height: 100vh;
 }
 
 .header {
@@ -27,8 +32,10 @@ body {
     width: 50%;
 }
 
-.header__nav>svg {
+a > svg{
     display: none;
+    text-decoration: none;
+    color: black;
 }
 
 .header__nav--links {
@@ -320,9 +327,8 @@ span {
         display: none;
     }
 
-    .header__nav>svg {
-        display: block;
-        cursor: pointer;
+    a > svg{
+    display: block;
     }
 
     .container__boxes {
