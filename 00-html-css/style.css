@@ -457,18 +457,69 @@ img{
     flex-direction: column;
 }
 .container__ourteam-title{
+    color: rgb(55, 38, 38);
+    font-family: "Work Sans", sans-serif;
     text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: bolder;
 }
 .aurteam__information{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    gap: 10px;
+    align-items: center;
+    height: fit-content;
 }
 .ourteam__information--img{
-
+    display: flex;
+    max-width: 80%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.ourteam__information--img > img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .ourteam__description{
     display: flex;
     flex-direction: row;
     gap: 12px;
+    flex-wrap: wrap;
 }
+.customers--text ~ span{
+    font-weight: 300;
+    color: rgb(149, 114, 69);
+}
+.container__banner{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(255, 243, 243);
+    border-radius: 12px;
+    padding: 50px;
+    margin: 10px;
+}
+.button__ourproducts{
+    background-color: rgb(255, 175, 25);
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 200px;
+}
+.container__banner--text{
+    width: 55%;
+    text-align: center;
+    color: rgb(149, 114, 69);
+    line-height: 2;
+}
+/*================================================*/
