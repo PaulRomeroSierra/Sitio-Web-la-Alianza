@@ -13,28 +13,31 @@ body {
     background-color: rgb(252 251 248);
     height: 100vh;
     position: relative;
+    padding: 30px;
 }
 
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 20px;
-    width: 100%;
+    width: 85%;
     position: fixed;
     z-index: 10000;
     top: 0;
     background-color: rgb(252 251 248);
-    padding: 10px;
+    padding: 15px;
     margin: 0;
-    box-shadow: 0px 0px 16px black;
+    border-bottom:1px solid rgb(255, 175, 25);;
 }
 
 .header__nav {
     display: flex;
     flex-direction: row;
+    gap: 20px;
     justify-content: space-around;
-    width: 50%;
+    width: fit-content;
+    align-items: center;
 }
 
 a > svg{
@@ -46,6 +49,8 @@ a > svg{
 .header__nav--links {
     text-decoration: none;
     color: black;
+    font-size: 14px;
+    text-align: center;
 }
 
 main {
@@ -53,6 +58,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 100%;
     margin-top: 10%;
 }
 
@@ -533,3 +539,48 @@ img{
     line-height: 2;
 }
 /*================================================*/
+.ask_producto--buttom{
+    background-color: rgb(255, 175, 25);
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 150px;
+}
+.contact__title{
+    font-size: 35px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal; 
+    align-self: start;
+}
+.contact__text{
+    font-weight: 300;
+    color: rgb(149, 114, 69);
+    align-self: start;
+}
+.container__form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.container__form--item1{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.container__form--item2{
+    width: 40%;
+    display: flex;
+    justify-content: ;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form > input, textarea{
+    border-radius: 10px;
+    padding: 12px;
+}
