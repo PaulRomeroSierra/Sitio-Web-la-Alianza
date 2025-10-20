@@ -218,19 +218,21 @@ button:hover {
     flex-direction: row;
     gap: 12px;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .container__img {
     display: flex;
-    flex-grow: 1;
     border-radius: 5px;
     overflow: hidden;
-    width: 30%;
+    flex-direction: column;
+    width: 100%;
 }
 
 .container__img>img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 .hen {
@@ -423,4 +425,50 @@ span {
     font-family: "Work Sans", sans-serif;
     font-weight: 900;
     font-style: normal; 
+}
+/*======================================*/
+.container__ourFarm{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+}
+.container__ourFarm  div > img{
+    object-fit: cover;
+    aspect-ratio: 3 / 2;
+    width: 100%;
+}
+img{
+    width: 100%;
+}
+.container__img--title{
+    font-weight: bold;
+}
+.container__img--text{
+    color: rgb(55, 38, 38);
+    font-family: "Work Sans", sans-serif;
+    font-style: normal; 
+    font-size: 16px;
+}
+/*====================================*/
+.container__ourteam{
+    display: flex;
+    flex-direction: column;
+}
+.container__ourteam-title{
+    text-align: center;
+}
+.aurteam__information{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.ourteam__information--img{
+
+}
+.ourteam__description{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
 }
