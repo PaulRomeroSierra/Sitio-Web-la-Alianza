@@ -383,6 +383,12 @@ span {
         width: 100%;
         text-align: center;
     }
+    .contact__title{
+        margin-top:30px;
+    }
+    .container__form{
+        flex-direction: column;
+    }
 }
 /*===========================ABOUT US========================*/
 .our_farm{
@@ -566,16 +572,16 @@ img{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 .container__form--item1{
-    width: 40%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
 }
-.container__form--item2{
-    width: 40%;
-    display: flex;}
+
 .form{
     display: flex;
     flex-direction: column;
@@ -615,19 +621,47 @@ img{
 }
 /*====================================*/
 .container__form--item2{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    flex-grow: 1;
     gap: 15px;
 }
 .container__contact{
     display: flex;
     flex-direction: row;
     gap: 15px;
+    align-items: center;
+    flex-grow: 1;
 }
 .container__contact > svg{
     color: rgb(255, 175, 25);
 }
-.container__location > h2{
+.container__location{
+    display: flex;
+    flex-direction:column ;
+    gap: 12px;
+}
+.container__location--title{
     font-family: "Work Sans", sans-serif;
+    margin-bottom: 15px;
+}
+.ubicacion__maps{
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 80%;
+}
+.ubicacion__maps > iframe{
+    width: 100%;
+}
+.container__location--text{
+    font-weight: 300;
+    color: rgb(149, 114, 69);
+    line-height: 1.5;
+}
+.container__location--text{
+    text-align:justify;
+    height: 200px;
+    margin-bottom: 10px;
 }

@@ -87,11 +87,11 @@
                 <h2>Envíanos un Mensaje</h2>
                 <form action="" class="form">
                     <label for="">Nombre</label>
-                    <input type="text" placeholder="Tu nombre completo">
+                    <input type="text" placeholder="Tu nombre completo" required>
                     <label for="">Email</label>
-                    <input type="email" placeholder="tu@email.com">
+                    <input type="email" placeholder="tu@email.com" required>
                     <label for="">Mensaje</label>
-                    <textarea name="" id="" placeholder="Escribe tu consulta aqui"></textarea>
+                    <textarea name="" id="" placeholder="Escribe tu consulta aqui" required ></textarea>
                     <button class="send_consult--button">Enviar Consulta...</button>
                 </form>
             </article>
@@ -99,14 +99,19 @@
                 <h2>Información de Contacto</h2>
                 <div class="container__contact item1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
-                <span>12345678</span>
+                <p>12345678</p>
                 </div>
                 <div class="container__contact item2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
-                <span>alianzagranja@alianza.com</span>
+                <p>alianzagranja@alianza.com</p>
                 </div>
                 <article class="container__location">
-                    <h2>Encuéntranos</h2>
+                    <h2 class="container__location--title">Encuéntranos</h2>
+                    <div class="ubicacion__maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.790093157176!2d-74.59331412608121!3d9.280159690791503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e5eeb73f5871e4d%3A0xe5dc1dfbe3017774!2sFinca%20la%20Alianza!5e1!3m2!1ses-419!2sco!4v1761342378107!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <h2 class="container__location--title">¿Listo para disfrutar de huevos frescos?</h2>
+                    <p class="container__location--text">Puedes hacer tu pedido llamandonos directamente o enviandonos un mensaje con tu solicitud a través del formulario. Ofrecemos recogida en la granja y entrega local para tu comodidad.</p>
                 </article>
             </article>
         </section>
