@@ -23,7 +23,7 @@ body {
     align-items: center;
     justify-content: space-around;
     margin-bottom: 20px;
-    width: 85%;
+    width: 95%;
     position: fixed;
     z-index: 10000;
     top: 0;
@@ -389,6 +389,9 @@ span {
     .container__form{
         flex-direction: column;
     }
+    .ask_producto--buttom{
+        display: none;
+    }
 }
 /*===========================ABOUT US========================*/
 .our_farm{
@@ -567,6 +570,7 @@ img{
     font-weight: 300;
     color: rgb(149, 114, 69);
     align-self: start;
+    line-height: 1.5;
 }
 .container__form{
     width: 100%;
