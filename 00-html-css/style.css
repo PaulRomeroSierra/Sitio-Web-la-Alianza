@@ -64,7 +64,7 @@ main {
     align-items: center;
     gap: 20px;
     width: 100%;
-    margin-top: 10%;
+    margin-top: 30px;
 }
 
 .container_img {
@@ -73,7 +73,9 @@ main {
     position: relative;
     width: 100%;
 }
-
+p{
+    user-select: none;
+}
 .container_img>img {
     width: 100%;
     aspect-ratio: 359/258;
@@ -110,20 +112,19 @@ main {
     font-weight: bold;
 }
 
-.container_img--button {
-    margin: auto;
-    width: 100%;
-    top: 60%;
-}
 
-.container_img--button>button {
+.container_img--button {
+    align-self: center;
+    width: 200px;
+    top: 60%;
     background-color: rgb(255, 175, 25);
     border: none;
     border-radius: 5px;
     padding: 15px;
     font-weight: bold;
     font-size: 14px;
-    width: 200px;
+    text-decoration: none;
+    color: #000;
 }
 
 button:hover {
@@ -517,6 +518,9 @@ img {
     font-weight: bold;
     font-size: 14px;
     width: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
 }
 
 .container__banner--text {
@@ -543,6 +547,7 @@ img {
     font-weight: 900;
     font-style: normal;
     align-self: start;
+    margin-top: 30px;
 }
 
 .contact__text {
@@ -572,6 +577,7 @@ img {
     flex-direction: column;
     gap: 15px;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 .form>input,
@@ -580,6 +586,7 @@ textarea {
     padding: 12px;
     border: 1px solid #0002;
     margin-top: 0px;
+    width: 100%;
 }
 
 .form>textarea::placeholder {
@@ -602,6 +609,7 @@ textarea:focus {
 
 .form>label {
     margin-bottom: 0px;
+    align-self: self-start;
 }
 
 .send_consult--button {
@@ -630,7 +638,15 @@ textarea:focus {
     align-items: center;
     flex-grow: 1;
 }
-
+.mail{
+    user-select: all;
+}
+.whatsapp__modal{
+    top: 20%;
+    right: 0%;
+    width: 100px;
+    position: fixed;
+}
 .container__contact>svg {
     color: rgb(255, 175, 25);
 }
@@ -745,6 +761,9 @@ button {
     width: 90%;
     margin-bottom: 30px;
 }
+.item{
+    font-size: 15px;
+}
 /*=============================================*/
 /*==========MEDIA QUERIES================*/
 @media screen and (max-width: 680px) {
@@ -806,5 +825,8 @@ button {
 
     .container__oureggs--items{
         flex-direction: column;
+    }
+    .oureggs--title{
+        margin-top: 30px;
     }
 }
