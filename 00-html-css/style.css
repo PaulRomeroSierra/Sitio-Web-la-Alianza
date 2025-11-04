@@ -7,8 +7,9 @@
 :root {
     --background--color: rgb(247, 247, 247);
     --background--color--banner:rgb(240, 229, 229);
+    --background--color--button:rgb(255, 175, 25);
+    --background--color--button--hover:rgb(245, 159, 0);
 }
-
 body {
     display: flex;
     flex-direction: column;
@@ -26,25 +27,26 @@ body {
     align-items: center;
     justify-content: space-around;
     margin-bottom: 20px;
-    width: 95%;
+    width: 100%;
     position: fixed;
     z-index: 10000;
     top: 0;
     background-color:var(--background--color);
-    padding: 15px;
     margin: 0;
-    border-bottom: 1px solid rgb(255, 175, 25);
+    background-color: var(--background--color--button);
+
 }
 
 .header__nav {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
     justify-content: space-around;
     width: fit-content;
     align-items: center;
-}
+    border-radius:5px;
 
+}
 a>svg {
     display: none;
     text-decoration: none;
@@ -56,8 +58,43 @@ a>svg {
     color: black;
     font-size: 14px;
     text-align: center;
+    width: fit-content;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    transition: background-color .4s  ease;
 }
-
+.header__nav--links:hover{
+    background-color: var(--background--color--button--hover);
+}
+.IconMenu2{
+    text-decoration: none;
+    border: none;
+}
+.nav__menu{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+    gap: 40px;
+    z-index: 1000;
+    background-color:var(--background--color--banner);
+    top:60px;
+}
+.IconMenu2{
+    display: none;
+}
+#checkbox{
+    display: none;
+}
+#checkbox:checked ~ .IconMenu2 ~ .nav__menu,a > svg{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    left: 0;
+}
 main {
     display: flex;
     flex-direction: column;
@@ -72,6 +109,7 @@ main {
     flex-direction: column;
     position: relative;
     width: 100%;
+    margin-top: 20px;
 }
 p{
     user-select: none;
@@ -532,13 +570,12 @@ img {
 
 /*================================================*/
 .ask_producto--buttom {
-    background-color: rgb(255, 175, 25);
+    background-color: var(--background--color--button);
     border: none;
-    border-radius: 15px;
-    padding: 10px;
     font-weight: bold;
     font-size: 14px;
-    width: 150px;
+    width: fit-content;
+    margin: 0;
 }
 
 .contact__title {
@@ -764,17 +801,25 @@ button {
 .item{
     font-size: 15px;
 }
-/*=============================================*/
+/*================ANIMACIONES DE BOTONES=======================*/
 /*==========MEDIA QUERIES================*/
 @media screen and (max-width: 680px) {
+    .header{
+        padding: 20px;
+    }
     .header__nav--links {
         display: none;
     }
-
-    a>svg {
+    .IconMenu2{
         display: block;
     }
-
+    #checkbox:checked ~ .IconMenu2 ~ .nav__menu,a > svg{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    right: 0;
+    }
     .container__boxes {
         flex-direction: column;
     }
