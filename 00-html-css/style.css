@@ -2,6 +2,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
     margin: 0;
+    user-select: none;
 }
 
 :root {
@@ -9,6 +10,7 @@
     --background--color--banner:rgb(240, 229, 229);
     --background--color--button:rgb(255, 175, 25);
     --background--color--button--hover:rgb(245, 159, 0);
+    --text--color:rgb(55, 38, 38);
 }
 body {
     display: flex;
@@ -48,7 +50,7 @@ body {
 
 }
 a>svg {
-    display: none;
+    display: block;
     text-decoration: none;
     color: black;
 }
@@ -72,15 +74,19 @@ a>svg {
     border: none;
 }
 .nav__menu{
-    display: none;
+    display: flex;
     position: absolute;
     flex-direction: column;
-    height: 400px;
+    height: 100px;
     width: 100%;
-    gap: 40px;
     z-index: 1000;
-    background-color:var(--background--color--banner);
+    background-color:#fff;
     top:60px;
+    left: 0;
+    align-items: center;
+    align-content: center;
+    opacity: 0;
+    gap: 0;
 }
 .IconMenu2{
     display: none;
@@ -88,13 +94,7 @@ a>svg {
 #checkbox{
     display: none;
 }
-#checkbox:checked ~ .IconMenu2 ~ .nav__menu,a > svg{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    left: 0;
-}
+
 main {
     display: flex;
     flex-direction: column;
@@ -183,7 +183,7 @@ button:hover {
 }
 
 .container__about-us--title {
-    color: rgb(55, 38, 38);
+    color:var(--text--color);
     font-size: 35px;
     font-family: "Work Sans", sans-serif;
     font-weight: 900;
@@ -806,19 +806,40 @@ button {
 @media screen and (max-width: 680px) {
     .header{
         padding: 20px;
+        justify-content: space-between;
     }
     .header__nav--links {
         display: none;
     }
     .IconMenu2{
-        display: block;
+        display: flex;
     }
     #checkbox:checked ~ .IconMenu2 ~ .nav__menu,a > svg{
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    right: 0;
+    color: var(--background--color--button);
+    }
+    #checkbox:checked ~ .IconMenu2 ~ .nav__menu{
+        opacity: 1;
+        display: flex;
+        height: 400px;
+        gap: 40px;
+        transition: gap .5s linear 0.3s, height .4s linear;
+        box-shadow: 2px 2px 3px black;
+    }
+    #checkbox:not(:checked) ~ .IconMenu2 ~ .nav__menu{
+        opacity: 0;
+        height: 0px;
+        transition: height .3s linear .1s,
+        opacity .2s linear;
+    }
+
+    a>svg{
+        width: 50px;
+        height: 30px;
+        border-radius: 5px;
     }
     .container__boxes {
         flex-direction: column;
