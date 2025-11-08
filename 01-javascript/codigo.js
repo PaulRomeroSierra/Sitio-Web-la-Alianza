@@ -1,6 +1,6 @@
 const menu = document.querySelector(".IconMenu2");
 let menu_close = `
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+<svg xmlns="http://www.w3.org/2000/svg" id="menu__open"  width="24" height="24" 
 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
 stroke-linecap="round" stroke-linejoin="round" 
 class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
@@ -9,7 +9,7 @@ class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
 </svg>`;
 
 let menu_open = `
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+<svg xmlns="http://www.w3.org/2000/svg" id="menu__open" width="24" height="24" 
 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
 stroke-linecap="round" stroke-linejoin="round" 
 class="icon icon-tabler icons-tabler-outline icon-tabler-x">
@@ -21,5 +21,5 @@ class="icon icon-tabler icons-tabler-outline icon-tabler-x">
 let abierto = false;
 menu.addEventListener("click", (e) => {
     menu.innerHTML= abierto ? menu_close : menu_open; 
-  abierto = !abierto;
+    abierto = !abierto;
 });

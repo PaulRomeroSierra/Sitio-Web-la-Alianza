@@ -49,6 +49,13 @@ body {
     border-radius:5px;
 
 }
+.nav__list{
+    display: flex;
+    flex-direction: row;
+}
+.nav__item{
+    list-style: none;
+}
 a>svg {
     display: block;
     text-decoration: none;
@@ -74,19 +81,19 @@ a>svg {
     border: none;
 }
 .nav__menu{
-    display: flex;
+    display: none;
     position: absolute;
     flex-direction: column;
-    height: 100px;
+    top: 0px;
+    height: 100%;
     width: 100%;
-    z-index: 1000;
+    z-index: 100;
     background-color:#fff;
-    top:60px;
     left: 0;
     align-items: center;
     align-content: center;
     opacity: 0;
-    gap: 0;
+    padding: 10px;
 }
 .IconMenu2{
     display: none;
@@ -807,6 +814,11 @@ button {
     .header{
         padding: 20px;
         justify-content: space-between;
+        height: 60px;
+    }
+    .header__title{
+        position: absolute;
+        z-index: 1000;
     }
     .header__nav--links {
         display: none;
@@ -814,32 +826,72 @@ button {
     .IconMenu2{
         display: flex;
     }
-    #checkbox:checked ~ .IconMenu2 ~ .nav__menu,a > svg{
+    #menu__open{
+        position: absolute;
+        z-index: 1000;
+        top: 30%;
+        right: 30px;
+    }
+    .nav__menu{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+    .nav__menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: auto;
+        padding: 30px;
+        width: 100%;
+    }
+    .nav__menu--items > a{
+        text-decoration: none;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        align-self: self-end;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+    }
+    .nav__menu--items {
+        text-align: center;
+        display: flex;
+        flex-direction:row;
+        justify-content: baseline;
+        text-decoration: none;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid black;
+        border-bottom-style:dashed;
+        gap: 30%;
+        margin: 0px;
+
+    }
+    #checkbox:checked ~ .IconMenu2 ~ .nav__menu, a > svg{
     display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+    justify-content:center;
+    text-align: start;
+    align-items:self-start;
     color: var(--background--color--button);
     }
     #checkbox:checked ~ .IconMenu2 ~ .nav__menu{
         opacity: 1;
         display: flex;
-        height: 400px;
+        height: 100vh;
+        top: -10px;
         gap: 40px;
-        transition: gap .5s linear 0.3s, height .4s linear;
-        box-shadow: 2px 2px 3px black;
     }
     #checkbox:not(:checked) ~ .IconMenu2 ~ .nav__menu{
         opacity: 0;
         height: 0px;
-        transition: height .3s linear .1s,
-        opacity .2s linear;
+        top:0px;
     }
-
     a>svg{
-        width: 50px;
-        height: 30px;
-        border-radius: 5px;
+        width: 30px;
+        height: 1000px;
+        align-self: center;
     }
     .container__boxes {
         flex-direction: column;
