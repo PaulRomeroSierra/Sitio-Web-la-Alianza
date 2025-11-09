@@ -105,15 +105,41 @@
                 <li class="nav__item"><a href="ours_eggs.html" class="header__nav--links">Nuestros Huevos</a></li>
                 <li class="nav__item"><a href="aboutUs.html" class="header__nav--links">Sobre Nosotros</a></li>
                 <li class="nav__item"><a href="contact.html" class="header__nav--links">Contacto</a></li>
-                <li class="nav__item"><a href="#" class="header__nav--links"><svg id="carrito" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                <li class="nav__item">                    <div class="header__nav--links" id="container__carrito">
+                        <svg id="carrito" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"
                             class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                             <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                             <path d="M17 17h-11v-14h-2" />
                             <path d="M6 5l14 1l-1 7h-13" />
-                        </svg></a></li>
+                        </svg>
+                        <table class="carrito">
+                            <thead>
+                                <tr>
+                                    <th class="carrito--titulo">Carrito</th>
+                                </tr>
+                            </thead>
+                            <tbody class="carrito--cuerpo">
+                                <tr>
+                                    <td class="carrito--img"><img src="docenaHuevos.jpg" alt="img--product"></td>
+                                </tr>
+                                <tr class="carrito--pago">
+                                    <td class="carrito__pago--titulo">Huevos Grandes
+                                    <td>
+                                    <td class="carrito--precio">$12.000</td>
+                                    <td><input type="number" name="" id="" value="1" min="1" max="20"></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><button class="carrito--button">Pagar</button></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div></li>
             </ul>
         </nav>
     </header>
@@ -128,24 +154,27 @@
                     <img src="cartonDeHuevo.jpg" alt="">
                 </div>
                 <h3 class="eggs__item--title">Huevos Grandes</h3>
-                <p class="ouregss--text item">De gallinas criadas en libertad, con yema de color intenso. $17.000/docena.</p>
-                <button class="eggs__item--button">Añadir al carrito</button>
+                <p class="ouregss--text item">De gallinas criadas en libertad, con yema de color intenso. </p>
+                <span class="ouregss--price">$17.500</span>
+                <button class="eggs__item--button" data-id="1">Añadir al carrito</button>
             </articule>
             <articule class="eggs__item item--dos">
                 <div class="container__oureggs--img">
                     <img src="docenaHuevos.jpg" alt="">
                 </div>
                 <h3 class="eggs__item--title">Huevos Medianos</h3>
-                <p class="ouregss--text item">De gallinas criadas en libertad, con yema de color intenso. $17.000/docena.</p>
-                <button class="eggs__item--button">Añadir al carrito</button>
+                <p class="ouregss--text item">De gallinas criadas en libertad, con yema de color intenso.</p>
+                <span class="ouregss--price">$17.500</span>
+                <button class="eggs__item--button" data-id="2">Añadir al carrito</button>
             </articule>
             <articule class="eggs__item item--tres">
                 <div class="container__oureggs--img">
                     <img src="huevos.jpg" alt="">
                 </div>
                 <h3 class="eggs__item--title">Huevos Pequeños</h3>
-                <p class="ouregss--text item">De gallinas criadas en libertad, con yema de color intenso. $17.000/docena.</p>
-                <button class="eggs__item--button">Añadir al carrito</button>
+                <p class="ouregss--text item">De gallinas criadas en libertad, con yema de color intenso.</p>
+                <span class="ouregss--price">$17.500</span>
+                <button class="eggs__item--button" data-id="3">Añadir al carrito</button>
             </articule>
         </section>
         <section class="container__banner">
@@ -166,7 +195,6 @@
         </small>
     </footer>
         <script src="../01-javascript/codigo.js"></script>
-
 </body>
 
 </html>
