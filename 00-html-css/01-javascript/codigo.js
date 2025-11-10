@@ -1,6 +1,10 @@
 const menu = document.querySelector(".IconMenu2");
 const productos= document.querySelector(".container__oureggs--items");
 const car_body= document.querySelector(".carrito--cuerpo");
+const checkboxCartFlotante= document.querySelector(".container__carrito--flotante");
+const carrito=document.querySelector(".carrito");
+
+
 let productsArray=[];
 
 let menu_close = `
@@ -27,10 +31,10 @@ menu.addEventListener("click", (e) => {
     menu.innerHTML= abierto ? menu_close : menu_open; 
     abierto = !abierto;
 });
-
+//Carrito
 document.addEventListener('DOMContentLoaded',function(){
     evenlisteners();
-});
+})
 
 function evenlisteners(){
     productos.addEventListener('click',getDataElements);
