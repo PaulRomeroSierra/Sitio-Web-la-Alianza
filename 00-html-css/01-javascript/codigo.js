@@ -1,8 +1,8 @@
 const menu = document.querySelector(".IconMenu2");
 const productos= document.querySelector(".container__oureggs--items");
-const car_body= document.querySelector(".carrito--cuerpo");
-const checkboxCartFlotante= document.querySelector(".container__carrito--flotante");
-const carrito=document.querySelector(".carrito");
+const car_body= document.querySelector(".cart--cuerpo");
+const checkboxCartFlotante= document.querySelector(".container__cart--flotante");
+const cart=document.querySelector(".cart");
 
 
 let productsArray=[];
@@ -31,13 +31,25 @@ menu.addEventListener("click", (e) => {
     menu.innerHTML= abierto ? menu_close : menu_open; 
     abierto = !abierto;
 });
-//Carrito
+//cart
 document.addEventListener('DOMContentLoaded',function(){
     evenlisteners();
 })
 
+
 function evenlisteners(){
     productos.addEventListener('click',getDataElements);
+}
+
+function updateCartCount(){
+    const cartCount = document.querySelector("#cartCount");
+    cartCount.textContent = productsArray.length;
+}
+
+function updateTotal(){
+    const total = document.querySelector("#total");
+    let totalProdu = productsArray.reduce((total,prod)=> total + prod.price + prod.quantity,0);
+    total.textContent= `$${totalProdu}`;
 }
 
 function getDataElements(e){
@@ -57,42 +69,44 @@ function selectData(prod){
 
     const exists=productsArray.some(prod => prod.id === productObj.id);
     if (exists){
-        showAlert('The product already exists in the cart','error');
+        showAlert('El producto ya existe en el cart','error');
         return;
     }
 
     productsArray=[...productsArray,productObj];
-    showAlert("The product was added succefuly","success")
+    showAlert("El producto fue agregado","success")
     productsHtml();
+    updateCartCount();
+    updateTotal();
 }
 function productsHtml(){
     cleanHtml();
     productsArray.forEach(prod =>{
         const {img,title,price,quantity,id} = prod;
         const tr = document.createElement('tr')
-        tr.classList='carrito--pago';
+        tr.classList='cart--pago';
         //img
         const tdImg= document.createElement('td');
-        tdImg.classList="carrito--img";
+        tdImg.classList="cart--img";
         const prodImg= document.createElement('img');
         prodImg.src=img;
         prodImg.alt='img--product';
         tdImg.appendChild(prodImg);
         //title
         const tdTitle=document.createElement('td');
-        tdTitle.classList="carrito__pago--titulo"
+        tdTitle.classList="cart__pago--titulo"
         const prodTitle=document.createElement('p');
         prodTitle.textContent=title;
         tdTitle.appendChild(prodTitle,tdTitle);
         //price
         const tdPrice=document.createElement('td');
-        tdPrice.classList="carrito--precio";
+        tdPrice.classList="cart--precio";
         const prodPrice=document.createElement('p');
         prodPrice.textContent=`$${price.toFixed(3)}`;
         tdPrice.appendChild(prodPrice);
         //quantity
         const tdQuantity=document.createElement('td');
-        tdQuantity.classList="carrito--inputs";
+        tdQuantity.classList="cart--inputs";
         const prodQuantity=document.createElement('input');
         prodQuantity.type='number';
         prodQuantity.min='1';
@@ -103,13 +117,26 @@ function productsHtml(){
         //Delete
         const prodDelete=document.createElement('button');
         prodDelete.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>';
+        prodDelete.onclick = () => destroyProduct(id)
         tdQuantity.appendChild(prodDelete);
         tr.append(tdImg,tdTitle,tdPrice,tdQuantity);
 
-        car_body.appendChild(tr);
+        car_body.append(tr);
         // console.log(tr)
     })
 }
+
+function destroyProduct(idProd){
+    productsArray = productsArray.filter(prod => prod.id !== idProd);
+    console.log(productsArray)
+    showAlert("El producto fue eliminado existosamente","success")
+    productsHtml();
+    updateCartCount();
+    updateTotal();
+
+
+}
+
 function cleanHtml(){
     car_body.innerHTML='';
 }
