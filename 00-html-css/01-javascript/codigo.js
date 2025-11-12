@@ -110,6 +110,7 @@ function productsHtml(){
         tdQuantity.classList="cart--inputs";
         const prodQuantity=document.createElement('input');
         prodQuantity.type='number';
+        prodQuantity.inputMode='numeric';
         prodQuantity.min='1';
         prodQuantity.value=quantity;
         prodQuantity.dataset.id=id;
