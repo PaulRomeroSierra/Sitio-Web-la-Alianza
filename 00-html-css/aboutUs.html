@@ -108,25 +108,24 @@
                             <path d="M6 5l14 1l-1 7h-13" />
                         </svg>
                         <table class="cart">
-                            <thead>
-                                <tr>
-                                    <th class="cart--titulo">cart</th>
+                            <thead class="cart__head">
+                                <tr class="cart__head--tr">
+                                    <th class="cart--titulo">Imagen</th>
+                                    <th  class="cart--titulo">Descripción</th>
+                                    <th  class="cart--titulo">Precio</th>
+                                    <th  class="cart--titulo">Cantidad</th>
                                 </tr>
                             </thead>
                             <tbody class="cart--cuerpo">
-                                <!-- <tr>
-                                    <td class="cart--img"><img src="docenaHuevos.jpg" alt=""></td>
-                                </tr>
-                                <tr class="cart--pago">
-                                    <td class="cart__pago--titulo">Huevos Grandes
-                                    <td>
-                                    <td class="cart--precio">$12.000</td>
-                                    <td><input type="number" name="" id="" value="1" min="1" max="20"></td>
-                                </tr> -->
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td><button class="cart--button">Pagar</button></td>
+                            <tfoot class="cart__footer">
+                                <tr class="cart__footer--tr">
+                                    <td class="cart__footer--td footer--price"><h4>Total:
+                                        <span id="total"></span>
+                                    </h4></td>
+                                </tr>
+                                <tr class="cart__footer--tr">
+                                    <td class="cart__footer--td"><button class="cart--button">Pagar</button></td>
                                 </tr>
                             </tfoot>
                         </table>

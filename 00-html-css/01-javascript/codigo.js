@@ -48,8 +48,9 @@ function updateCartCount(){
 
 function updateTotal(){
     const total = document.querySelector("#total");
-    let totalProdu = productsArray.reduce((total,prod)=> total + prod.price + prod.quantity,0);
-    total.textContent= `$${totalProdu}`;
+    let totalProdu = productsArray.reduce((total,prod)=> total + prod.price * prod.quantity,0);
+    console.log(totalProdu)
+    total.textContent= `$${totalProdu.toFixed(3)}`;
 }
 
 function getDataElements(e){
@@ -102,7 +103,7 @@ function productsHtml(){
         const tdPrice=document.createElement('td');
         tdPrice.classList="cart--precio";
         const prodPrice=document.createElement('p');
-        prodPrice.textContent=`$${price.toFixed(3)}`;
+        prodPrice.textContent=`$${(price * quantity).toFixed(3)}`;
         tdPrice.appendChild(prodPrice);
         //quantity
         const tdQuantity=document.createElement('td');
@@ -112,6 +113,7 @@ function productsHtml(){
         prodQuantity.min='1';
         prodQuantity.value=quantity;
         prodQuantity.dataset.id=id;
+        prodQuantity.oninput=updateQuantity;
         tdQuantity.appendChild(prodQuantity)
 
         //Delete
@@ -124,6 +126,18 @@ function productsHtml(){
         car_body.append(tr);
         // console.log(tr)
     })
+}
+function updateQuantity(e){
+    const newQuantity=parseInt(e.target.value,10);
+    const idProd = parseInt(e.target.dataset.id,10);
+
+    const product = productsArray.find(prod => prod.id === idProd);
+    if (product && newQuantity > 0){
+        product.quantity= newQuantity
+    }
+    productsHtml();
+    updateTotal();
+    console.log(newQuantity)
 }
 
 function destroyProduct(idProd){
@@ -149,5 +163,5 @@ function showAlert(message,type){
 
     document.body.appendChild(div);
 
-    setTimeout(()=> div.remove(),5000);
+    setTimeout(()=> div.remove(),2000);
 }
