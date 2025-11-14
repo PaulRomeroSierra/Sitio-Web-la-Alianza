@@ -123,6 +123,7 @@ a>svg {
 }
 
 #container__cart {
+    padding: 0;
     position: relative;
 }
 
@@ -267,6 +268,13 @@ button>svg {
     border-radius: 8px;
     width: 100%;
     color: var(--color--text--menu);
+    display: flex;
+    align-items: center;
+}
+.link__wasap{
+    width: 100%;
+    text-decoration: none;
+    color:#000;
 }
 .cart__footer--tr{
     width: 100%;
@@ -281,6 +289,9 @@ button>svg {
 }
 .cart__footer--td > span{
     align-self: flex-end;
+}
+#container__cart{
+    padding: 15px;
 }
 #container__cart:hover>.cart {
     display: flex;
@@ -942,6 +953,7 @@ textarea:focus {
     height: 200px;
     margin-bottom: 10px;
 }
+
 
 /*================OUR--EGGS=====================*/
 .container__oureggs {

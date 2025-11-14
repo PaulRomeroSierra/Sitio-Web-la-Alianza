@@ -3,6 +3,9 @@ const productos= document.querySelector(".container__oureggs--items");
 const car_body= document.querySelector(".cart--cuerpo");
 const checkboxCartFlotante= document.querySelector(".container__cart--flotante");
 const cart=document.querySelector(".cart");
+const buttonCart= document.querySelector(".cart--button");
+const link__wasap= document.querySelector(".link__wasap");
+
 
 
 let productsArray=[];
@@ -39,6 +42,27 @@ document.addEventListener('DOMContentLoaded',function(){
 
 function evenlisteners(){
     productos.addEventListener('click',getDataElements);
+
+    link__wasap.addEventListener('click',function(){
+        let mensaje = [];
+        productsArray.forEach(element =>{
+            mensaje.push(`Tipo de Huevos: ${element.title}`)
+            mensaje.push(`Precio: ${element.price}`)
+            mensaje.push(`Cantidad: ${element.quantity}`)
+        })
+        link__wasap.target="blank";
+        link__wasap.href=`https://api.whatsapp.com/send?phone=573105103893&text=${mensaje}"`
+    })
+
+
+    const loadProduct= localStorage.getItem('products');
+    if (loadProduct){
+        productsArray=JSON.parse(loadProduct);
+        productsHtml();
+        updateCartCount();
+    }else{
+        productsArray=[];
+    }
 }
 
 function updateCartCount(){
@@ -74,11 +98,14 @@ function selectData(prod){
         return;
     }
 
+
     productsArray=[...productsArray,productObj];
     showAlert("El producto fue agregado","success")
     productsHtml();
     updateCartCount();
     updateTotal();
+
+
 }
 function productsHtml(){
     cleanHtml();
@@ -124,10 +151,25 @@ function productsHtml(){
         tdQuantity.appendChild(prodDelete);
         tr.append(tdImg,tdTitle,tdPrice,tdQuantity);
 
+        //link_wasp
+        // const enlaceWasap= document.createElement('a');
+        // enlaceWasap.textContent="Pagar"
+        // enlaceWasap.classList.add("link__wasap")
+        // buttonCart.removeChild(textoTemporal);
+        // buttonCart.appendChild(enlaceWasap);
+        // enlaceWasap.onclick=messageWasap
+
         car_body.append(tr);
         // console.log(tr)
     })
+    saveLocalStorage();
 }
+
+
+function saveLocalStorage(){
+    localStorage.setItem('products', JSON.stringify(productsArray))
+}
+
 function updateQuantity(e){
     const newQuantity=parseInt(e.target.value,10);
     const idProd = parseInt(e.target.dataset.id,10);
@@ -138,6 +180,7 @@ function updateQuantity(e){
     }
     productsHtml();
     updateTotal();
+    saveLocalStorage();
     console.log(newQuantity)
 }
 
@@ -148,13 +191,18 @@ function destroyProduct(idProd){
     productsHtml();
     updateCartCount();
     updateTotal();
-
+    saveLocalStorage();
 
 }
 
 function cleanHtml(){
     car_body.innerHTML='';
 }
+function messageWasap(enlace){
+    console.log(enlace.target)
+}
+
+
 function showAlert(message,type){
     const norepeatAlert= document.querySelector('.alert')
     if (norepeatAlert) norepeatAlert.remove();
