@@ -45,15 +45,19 @@ function evenlisteners(){
 
     link__wasap.addEventListener('click',function(){
         let mensaje = [];
-        productsArray.forEach(element =>{
+        if(productsArray.length===0){
+            console.log("No hay productos en el carrito")
+        }else{
+            productsArray.forEach(element =>{
             mensaje.push(`Tipo de Huevos: ${element.title}`)
-            mensaje.push(`Precio: ${element.price}`)
+            mensaje.push(`Precio: ${element.price}00`)
             mensaje.push(`Cantidad: ${element.quantity}`)
         })
         link__wasap.target="blank";
-        link__wasap.href=`https://api.whatsapp.com/send?phone=573105103893&text=${mensaje}"`
+        link__wasap.href=`https://api.whatsapp.com/send?phone=573105103893&text=${mensaje}`;
+        }
     })
-
+//Falta la correcion que cuando los productos se eliminen tambien se borre el contenido del mensaje.
 
     const loadProduct= localStorage.getItem('products');
     if (loadProduct){
@@ -192,7 +196,6 @@ function destroyProduct(idProd){
     updateCartCount();
     updateTotal();
     saveLocalStorage();
-
 }
 
 function cleanHtml(){
