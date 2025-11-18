@@ -51,7 +51,7 @@ function evenlisteners(){
             link__wasap.removeAttribute("target")
         }else{
             productsArray.forEach(element =>{
-            mensaje.push(`Tipo de Huevos: ${element.title}🥚\n`)
+            mensaje.push(`${element.title}🥚\n`)
             mensaje.push(`Precio: ${element.price}00💲\n`)
             mensaje.push(`Cantidad: ${element.quantity}🧺\n`)
         })
