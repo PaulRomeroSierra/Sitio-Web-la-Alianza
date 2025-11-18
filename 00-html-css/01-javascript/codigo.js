@@ -46,18 +46,19 @@ function evenlisteners(){
     link__wasap.addEventListener('click',function(){
         let mensaje = [];
         if(productsArray.length===0){
-            console.log("No hay productos en el carrito")
+            showAlert('No hay productos en el carrito','error');
+            link__wasap.removeAttribute("href")
+            link__wasap.removeAttribute("target")
         }else{
             productsArray.forEach(element =>{
-            mensaje.push(`Tipo de Huevos: ${element.title}`)
-            mensaje.push(`Precio: ${element.price}00`)
-            mensaje.push(`Cantidad: ${element.quantity}`)
+            mensaje.push(`Tipo de Huevos: ${element.title}🥚\n`)
+            mensaje.push(`Precio: ${element.price}00💲\n`)
+            mensaje.push(`Cantidad: ${element.quantity}🧺\n`)
         })
         link__wasap.target="blank";
         link__wasap.href=`https://api.whatsapp.com/send?phone=573105103893&text=${mensaje}`;
         }
     })
-//Falta la correcion que cuando los productos se eliminen tambien se borre el contenido del mensaje.
 
     const loadProduct= localStorage.getItem('products');
     if (loadProduct){
@@ -77,7 +78,6 @@ function updateCartCount(){
 function updateTotal(){
     const total = document.querySelector("#total");
     let totalProdu = productsArray.reduce((total,prod)=> total + prod.price * prod.quantity,0);
-    console.log(totalProdu)
     total.textContent= `$${totalProdu.toFixed(3)}`;
 }
 
@@ -154,17 +154,8 @@ function productsHtml(){
         prodDelete.onclick = () => destroyProduct(id)
         tdQuantity.appendChild(prodDelete);
         tr.append(tdImg,tdTitle,tdPrice,tdQuantity);
-
-        //link_wasp
-        // const enlaceWasap= document.createElement('a');
-        // enlaceWasap.textContent="Pagar"
-        // enlaceWasap.classList.add("link__wasap")
-        // buttonCart.removeChild(textoTemporal);
-        // buttonCart.appendChild(enlaceWasap);
-        // enlaceWasap.onclick=messageWasap
-
         car_body.append(tr);
-        // console.log(tr)
+
     })
     saveLocalStorage();
 }
@@ -185,12 +176,10 @@ function updateQuantity(e){
     productsHtml();
     updateTotal();
     saveLocalStorage();
-    console.log(newQuantity)
 }
 
 function destroyProduct(idProd){
     productsArray = productsArray.filter(prod => prod.id !== idProd);
-    console.log(productsArray)
     showAlert("El producto fue eliminado existosamente","success")
     productsHtml();
     updateCartCount();
@@ -201,9 +190,7 @@ function destroyProduct(idProd){
 function cleanHtml(){
     car_body.innerHTML='';
 }
-function messageWasap(enlace){
-    console.log(enlace.target)
-}
+
 
 
 function showAlert(message,type){
