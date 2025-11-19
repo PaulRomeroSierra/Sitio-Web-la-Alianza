@@ -259,7 +259,7 @@ button>svg {
     width: 100%;
     flex-direction: column;
 }
-.cart--button {
+.cart--button, .send_consult--button {
     font-size: 16px;
     background-color: var(--background--color--button);
     border: none;
@@ -271,7 +271,7 @@ button>svg {
     display: flex;
     align-items: center;
 }
-.link__wasap{
+.link__wasap,.link__send--consult{
     width: 100%;
     text-decoration: none;
     color:#000;

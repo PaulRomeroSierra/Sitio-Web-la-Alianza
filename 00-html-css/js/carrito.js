@@ -1,48 +1,16 @@
-const menu = document.querySelector(".IconMenu2");
+import { menu } from "./module/menu.js";
+
 const productos= document.querySelector(".container__oureggs--items");
 const car_body= document.querySelector(".cart--cuerpo");
-const checkboxCartFlotante= document.querySelector(".container__cart--flotante");
-const cart=document.querySelector(".cart");
-const buttonCart= document.querySelector(".cart--button");
 const link__wasap= document.querySelector(".link__wasap");
-
-
-
 let productsArray=[];
 
-let menu_close = `
-<svg xmlns="http://www.w3.org/2000/svg" id="menu__open"  width="24" height="24" 
-viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
-stroke-linecap="round" stroke-linejoin="round" 
-class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
-<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-<path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" />
-</svg>`;
-
-let menu_open = `
-<svg xmlns="http://www.w3.org/2000/svg" id="menu__open" width="24" height="24" 
-viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
-stroke-linecap="round" stroke-linejoin="round" 
-class="icon icon-tabler icons-tabler-outline icon-tabler-x">
-<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-<path d="M18 6L6 18" />
-<path d="M6 6l12 12" />
-</svg>`;
-
-let abierto = false;
-menu.addEventListener("click", (e) => {
-    menu.innerHTML= abierto ? menu_close : menu_open; 
-    abierto = !abierto;
-});
-//cart
 document.addEventListener('DOMContentLoaded',function(){
     evenlisteners();
 })
 
-
 function evenlisteners(){
     productos.addEventListener('click',getDataElements);
-
     link__wasap.addEventListener('click',function(){
         let mensaje = [];
         if(productsArray.length===0){
@@ -68,6 +36,7 @@ function evenlisteners(){
     }else{
         productsArray=[];
     }
+    menu();
 }
 
 function updateCartCount(){
@@ -87,6 +56,7 @@ function getDataElements(e){
         selectData(elementHtml);
    }
 }
+
 function selectData(prod){
     const productObj = {
         img:prod.querySelector('img').src,
@@ -111,6 +81,7 @@ function selectData(prod){
 
 
 }
+
 function productsHtml(){
     cleanHtml();
     productsArray.forEach(prod =>{
@@ -160,7 +131,6 @@ function productsHtml(){
     saveLocalStorage();
 }
 
-
 function saveLocalStorage(){
     localStorage.setItem('products', JSON.stringify(productsArray))
 }
@@ -191,8 +161,6 @@ function cleanHtml(){
     car_body.innerHTML='';
 }
 
-
-
 function showAlert(message,type){
     const norepeatAlert= document.querySelector('.alert')
     if (norepeatAlert) norepeatAlert.remove();
@@ -204,3 +172,4 @@ function showAlert(message,type){
 
     setTimeout(()=> div.remove(),2000);
 }
+

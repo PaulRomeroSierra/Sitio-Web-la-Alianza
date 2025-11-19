@@ -11,15 +11,15 @@
     <meta property="og:description"
         content="Granja familiar avicola dedicada a la venta de huevos de gallina para el consumo, con gallinas criadas en libertad">
     <meta property="og:image" content="./image.png">
-    <link rel="icon" type="" href="rooster__logo.png">
+    <link rel="icon" type="" href="./img/rooster__logo.png">
     <title>Alianza - Inicio</title>
     <!--La etiqueta <link rel="alternate"> se usa en HTML para indicar versiones alternativas de una misma página web, normalmente en otros idiomas, formatos o tipos de contenido.-->
     <link rel="alternate" href="https://example.com/es/" hreflang="es">
     <!--Version original de la pagina-->
     <link rel="canonical" href="https://example.com/pagina-original/" />
     <!--ESTILOS-->
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- <link rel="stylesheet" href="./font.css"> -->
     <!--FUENTES-->
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
 
@@ -43,7 +43,7 @@
             </label>
             <nav class="nav__menu">
                 <header class="header__menu">
-                    <div class="container__menu--img"><img src="rooster__logo.png" alt="rooster__logo"></div>
+                    <div class="container__menu--img"><img src="./img/rooster__logo.png" alt="rooster__logo"></div>
                     <h2 class="title__menu">Granja Alianza</h2>
                 </header>
                 <ul>
@@ -71,7 +71,7 @@
                             <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
                             <path d="M3 13v-1a2 2 0 0 1 2 -2h2" />
                         </svg>
-                        <a href="aboutUs.html">Sobre Nosotros</a>
+                        <a href="./html/aboutUs.html">Sobre Nosotros</a>
                     </li>
                     <li class="nav__menu--items">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -81,7 +81,7 @@
                             <path
                                 d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
                         </svg>
-                        <a href="contact.html">Contacto</a>
+                        <a href="./html/contact.html">Contacto</a>
                     </li>
                     <li class="nav__menu--items">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -93,62 +93,27 @@
                             <path d="M17 17h-11v-14h-2" />
                             <path d="M6 5l14 1l-1 7h-13" />
                         </svg>
-                        <a href="ours_eggs.html">Nuestros Productos</a>
+                        <a href="./html/ours_eggs.html">Nuestros Productos</a>
                     </li>
                 </ul>
             </nav>
             <ul class="nav__list">
                 <li class="nav__item"> <a href="index.html" class="header__nav--links">Inicio</a>
                 </li>
-                <li class="nav__item"><a href="ours_eggs.html" class="header__nav--links">Nuestros Huevos</a></li>
-                <li class="nav__item"><a href="aboutUs.html" class="header__nav--links">Sobre Nosotros</a></li>
-                <li class="nav__item"><a href="contact.html" class="header__nav--links">Contacto</a></li>
+                <li class="nav__item"><a href="./html/ours_eggs.html" class="header__nav--links">Nuestros Huevos</a></li>
+                <li class="nav__item"><a href="./html/aboutUs.html" class="header__nav--links">Sobre Nosotros</a></li>
+                <li class="nav__item"><a href="./html/contact.html" class="header__nav--links">Contacto</a></li>
                 <li class="nav__item">
-                    <!-- <div class="header__nav--links" id="container__cart"> -->
-                        <!-- <svg id="cart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                            <path d="M17 17h-11v-14h-2" />
-                            <path d="M6 5l14 1l-1 7h-13" />
-                        </svg>
-                        <table class="cart">
-                        <table class="cart">
-                            <thead class="cart__head">
-                                <tr class="cart__head--tr">
-                                    <th class="cart--titulo">Imagen</th>
-                                    <th  class="cart--titulo">Descripción</th>
-                                    <th  class="cart--titulo">Precio</th>
-                                    <th  class="cart--titulo">Cantidad</th>
-                                </tr>
-                            </thead>
-                            <tbody class="cart--cuerpo">
-                            </tbody>
-                            <tfoot class="cart__footer">
-                                <tr class="cart__footer--tr">
-                                    <td class="cart__footer--td footer--price"><h4>Total:
-                                        <span id="total"></span>
-                                    </h4></td>
-                                </tr>
-                                <tr class="cart__footer--tr">
-                                    <td class="cart__footer--td"><button class="cart--button">Pagar</button></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div> -->
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <section class="container_img">
-            <img src="./image.png" alt="">
+            <img src="./img/image.png" alt="gallinalibre">
             <h1 class="container_img--title">Huevos frescos, Directo de Nuestra Granja a tu mesa</h1>
             <p class="container_img--text">De gallinas felices y criadas en libertad.</p>
-            <a href="ours_eggs.html" class="container_img--button">Ver nuestros Huevos</a>
+            <a href="./html/ours_eggs.html" class="container_img--button">Ver nuestros Huevos</a>
         </section>
         <section class="container__about-us">
             <header class="container__about-us--header">
@@ -221,13 +186,13 @@
             <h3 class="ourFarm__title">Un Vistazo a Nuestra Granja</h3>
             <section class="container__ourFarm--img">
                 <div class="container__img ">
-                    <img class="hen" src="./image.png" alt="Gallina" title="Gallina">
+                    <img class="hen" src="./img/image.png" alt="Gallina" title="Gallina">
                 </div>
                 <div class="container__img">
-                    <img class="eggs" src="./istockphoto-1404777198-612x612.jpg" alt="Huevos" title="Huevos">
+                    <img class="eggs" src="./img/istockphoto-1404777198-612x612.jpg" alt="Huevos" title="Huevos">
                 </div>
                 <div class="container__img">
-                    <img class="farm" src="./IMG-20250910-WA0036.jpg" alt="foto de la granja" title="foto de la granja">
+                    <img class="farm" src="./img/IMG-20250910-WA0036.jpg" alt="foto de la granja" title="foto de la granja">
                 </div>
             </section>
             <footer class="container__opinion">
@@ -266,5 +231,5 @@
             &copy; 2025 Granja la Alianza.Todos los derechos reservados.
         </small>
     </footer>
-        <script src="./01-javascript/codigo.js"></script></body>
+        <script type="module" src="./js/main.js"></script></body>
 </html>

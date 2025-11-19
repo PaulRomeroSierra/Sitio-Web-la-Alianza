@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Encuentra huevos frescos de gallinas de pastoreo">
     <!--OPEN GRAPH
     Equitequetas que sirven para que sea vea bien en las distintas redes sociales-->
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Granja avicola la Alianza">
     <meta property="og:description"
         content="Granja familiar avicola dedicada a la venta de huevos de gallina para el consumo, con gallinas criadas en libertad">
-    <meta property="og:image" content="./image.png">
-    <link rel="icon" type="" href="rooster__logo.png">
-    <title>Alianza - Nuestros Huevos</title>
+    <meta property="og:image" content="../img/image.png">
+    <link rel="icon" type="" href="../img/rooster__logo.png">
+    <title>Alianza - Contacto</title>
     <!--La etiqueta <link rel="alternate"> se usa en HTML para indicar versiones alternativas de una misma página web, normalmente en otros idiomas, formatos o tipos de contenido.-->
     <link rel="alternate" href="https://example.com/es/" hreflang="es">
     <!--Version original de la pagina-->
     <link rel="canonical" href="https://example.com/pagina-original/" />
     <!--ESTILOS-->
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <!-- <link rel="stylesheet" href="./font.css"> -->
     <!--FUENTES-->
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
     <header class="header">
         <h2 class="header__title">Granja Alianza</h2>
-        <nav class="header__nav">
+                <nav class="header__nav">
             <!--ENLACES CON EL LINK-->
             <input type="checkbox" name="menu" id="checkbox">
             <label for="checkbox" class="IconMenu2"><svg id="menu__open" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -43,7 +42,7 @@
             </label>
             <nav class="nav__menu">
                 <header class="header__menu">
-                    <div class="container__menu--img"><img src="rooster__logo.png" alt="rooster__logo"></div>
+                    <div class="container__menu--img"><img src="../img/rooster__logo.png" alt="rooster__logo"></div>
                     <h2 class="title__menu">Granja Alianza</h2>
                 </header>
                 <ul>
@@ -57,7 +56,7 @@
                                 <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
                                 <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
                             </svg>
-                        <a href="index.html">Inicio</a>
+                        <a href="../index.html">Inicio</a>
                     </li>
                     <li class="nav__menu--items">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -100,90 +99,56 @@
                 </ul>
             </nav>
             <ul class="nav__list">
-                <li class="nav__item"> <a href="index.html" class="header__nav--links">Inicio</a></li>
+                <li class="nav__item"> <a href="../index.html" class="header__nav--links">Inicio</a>
+                </li>
                 <li class="nav__item"><a href="ours_eggs.html" class="header__nav--links">Nuestros Huevos</a></li>
                 <li class="nav__item"><a href="aboutUs.html" class="header__nav--links">Sobre Nosotros</a></li>
                 <li class="nav__item"><a href="contact.html" class="header__nav--links">Contacto</a></li>
-                <li class="nav__item"><div class="header__nav--links" id="container__cart">
-                        <svg id="cart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                            <path d="M17 17h-11v-14h-2" />
-                            <path d="M6 5l14 1l-1 7h-13" />
-                        </svg>
-                        <span id="cartCount"></span>
-
-                        <table class="cart">
-                            <thead class="cart__head">
-                                <tr class="cart__head--tr">
-                                    <th class="cart--titulo">Imagen</th>
-                                    <th  class="cart--titulo">Descripción</th>
-                                    <th  class="cart--titulo">Precio</th>
-                                    <th  class="cart--titulo">Cantidad</th>
-                                </tr>
-                            </thead>
-                            <tbody class="cart--cuerpo">
-                            </tbody>
-                            <tfoot class="cart__footer">
-                                <tr class="cart__footer--tr">
-                                    <td class="cart__footer--td footer--price"><h4>Total:
-                                        <span id="total"></span>
-                                    </h4></td>
-                                </tr>
-                                <tr class="cart__footer--tr">
-                                    <td class="cart__footer--td"><button class="cart--button"><a class="link__wasap">Pagar</a></button></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="container__oureggs">
-            <h1 class="oureggs--title">Nuestros Huevos Frescos</h1>
-            <p class="ouregss--text">Descubre la frescura de nuestros huevos. Estamos comprometidos con la calidad y el bienestar animal.</p>
-        </section>
-        <section class="container__oureggs--items">
-            <articule class="eggs__item item--uno">
-                <div class="container__oureggs--img">
-                    <img src="cartonDeHuevo.jpg" alt="">
+        <h1 class="contact__title">Ponte en Contacto con Nosostros</h1>
+        <p class="contact__text">Estamos aqui para ayudarte. Llena el formulario, Llámanos o vísitanos en la granja.</p>
+        <section class="container__form">
+            <article class="container__form--item1">
+                <h2>Envíanos un Mensaje</h2>
+                <form action="" class="form" >
+                    <label for="">Nombre</label>
+                    <input class="input--name" type="text" placeholder="Tu nombre completo" required>
+                    <label for="">Email</label>
+                    <input class="input--email" type="email" placeholder="tu@email.com" required>
+                    <label for="">Mensaje</label>
+                    <textarea class="input--textarea" name="" id="" placeholder="Escribe tu consulta aqui" required ></textarea>
+                    <button class="send_consult--button"><a class="link__send--consult">Enviar Mensaje</a></button>
+                    <!-- <button class="cart--button"><a class="link__wasap">Pagar</a></button></td> -->
+                </form>
+            </article>
+            <article class="container__form--item2">
+                <h2>Información de Contacto</h2>
+                <div class="container__contact item1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
+                <p>12345678</p>
                 </div>
-                <h3 class="eggs__item--title">Huevos Grandes</h3>
-                <p class="ouregss--text item">De gallinas criadas en libertad, con yema de color intenso. </p>
-                <span class="ouregss--price">$17.500</span>
-                <button class="eggs__item--button" data-id="1">Añadir al cart</button>
-            </articule>
-            <articule class="eggs__item item--dos">
-                <div class="container__oureggs--img">
-                    <img src="docenaHuevos.jpg" alt="">
+                <div class="container__contact item2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                <p class="mail">alianzagranja@alianza.com</p>
                 </div>
-                <h3 class="eggs__item--title">Huevos Medianos</h3>
-                <p class="ouregss--text item">De gallinas criadas en libertad, con yema de color intenso.</p>
-                <span class="ouregss--price">$17.500</span>
-                <button class="eggs__item--button" data-id="2">Añadir al cart</button>
-            </articule>
-            <articule class="eggs__item item--tres">
-                <div class="container__oureggs--img">
-                    <img src="huevos.jpg" alt="">
-                </div>
-                <h3 class="eggs__item--title">Huevos Pequeños</h3>
-                <p class="ouregss--text item">De gallinas criadas en libertad, con yema de color intenso.</p>
-                <span class="ouregss--price">$17.500</span>
-                <button class="eggs__item--button" data-id="3">Añadir al cart</button>
-            </articule>
-        </section>
-        <section class="container__banner">
-                <header>
-                    <h2>¿Listo para hacer un pedido o tienes preguntas sobre compras al por mayor?</h2>
-                </header>
-                    <a href="contact.html" class="button__ourproducts">Contactanos</a>
+                <article class="container__location">
+                    <h2 class="container__location--title">Encuéntranos</h2>
+                    <div class="ubicacion__maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.790093157176!2d-74.59331412608121!3d9.280159690791503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e5eeb73f5871e4d%3A0xe5dc1dfbe3017774!2sFinca%20la%20Alianza!5e1!3m2!1ses-419!2sco!4v1761342378107!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <h2 class="container__location--title">¿Listo para disfrutar de huevos frescos?</h2>
+                    <p class="container__location--text">Puedes hacer tu pedido llamandonos directamente o enviandonos un mensaje con tu solicitud a través del formulario. Ofrecemos recogida en la granja y entrega local para tu comodidad.</p>
+                </article>
+            </article>
         </section>
     </main>
+    <div class="container__whatsapp">
+        <a class="whatsapp__modal" target="_blank"  href="https://api.whatsapp.com/send?phone=573105103893&text=Hola quiero comprar tus productos!🥚🧺🥚">
+            <img src="../img/WhatsApp_icon.png" alt="logo_wasap" title="Whatsapp">
+        </a>
     </div>
     <footer class="footer">
         <nav class="footer__nav footer__items">
@@ -195,7 +160,6 @@
             &copy; 2025 Granja la Alianza.Todos los derechos reservados.
         </small>
     </footer>
-        <script src="./01-javascript/codigo.js"></script>
-</body>
-
+        <script type="module" src="../js/contacto.js"></script>
+    </body>
 </html>
