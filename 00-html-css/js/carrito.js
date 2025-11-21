@@ -1,5 +1,4 @@
 import { menu } from "./module/menu.js";
-
 const productos= document.querySelector(".container__oureggs--items");
 const car_body= document.querySelector(".cart--cuerpo");
 const link__wasap= document.querySelector(".link__wasap");
@@ -117,13 +116,20 @@ function productsHtml(){
         prodQuantity.value=quantity;
         prodQuantity.dataset.id=id;
         prodQuantity.oninput=updateQuantity;
-        tdQuantity.appendChild(prodQuantity)
-
+        const increaseQuantity= document.createElement("span");
+        increaseQuantity.classList.add("increaseQuantity")
+        increaseQuantity.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>';
+        increaseQuantity.onclick=()=>increase(prodQuantity);
+        const decreaseQuantity= document.createElement("span");
+        decreaseQuantity.classList.add("drecreaseQuantity")
+        decreaseQuantity.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /></svg>';
+        decreaseQuantity.onclick=()=>decrease(prodQuantity)
         //Delete
         const prodDelete=document.createElement('button');
         prodDelete.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>';
+        prodDelete.classList.add("delete--button")
         prodDelete.onclick = () => destroyProduct(id)
-        tdQuantity.appendChild(prodDelete);
+        tdQuantity.append(increaseQuantity,decreaseQuantity,prodQuantity,prodDelete);
         tr.append(tdImg,tdTitle,tdPrice,tdQuantity);
         car_body.append(tr);
 
@@ -173,3 +179,31 @@ function showAlert(message,type){
     setTimeout(()=> div.remove(),2000);
 }
 
+function increase(ProduQuantity){
+    ProduQuantity.value= parseInt(ProduQuantity.value) + 1
+    const idProd = parseInt(ProduQuantity.dataset.id, 10);
+    const product = productsArray.find(prod => prod.id === idProd);
+
+    if (product){
+        product.quantity = parseInt(ProduQuantity.value);
+    }
+
+    productsHtml();
+    updateTotal();
+    saveLocalStorage();
+}
+function decrease(ProduQuantity){
+    const idProd = parseInt(ProduQuantity.dataset.id, 10);
+    const product = productsArray.find(prod => prod.id === idProd);
+
+    if (product){
+        if (ProduQuantity.value > 1){
+            ProduQuantity.value= parseInt(ProduQuantity.value) - 1
+            product.quantity = parseInt(ProduQuantity.value);
+        }
+    }
+
+    productsHtml();
+    updateTotal();
+    saveLocalStorage();
+}

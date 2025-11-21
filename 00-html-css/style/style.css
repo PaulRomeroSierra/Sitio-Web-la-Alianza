@@ -150,6 +150,7 @@ a>svg {
     align-items: center;
     text-align: center;
     border-bottom: 2px solid black;
+    margin-bottom: 10px;
 }
 .cart__head--tr{
     display: flex;
@@ -180,15 +181,15 @@ a>svg {
     align-items: center;
     gap: 5px;
     width: fit-content;
+    position: relative;
 }
 
 .cart--cuerpo {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
-
 }
 
 .cart--img {
@@ -224,33 +225,56 @@ a>svg {
     height: auto;
     flex-grow: 1;
     outline: none;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    width: 50px;
+    width: 40px;
+    border-radius: 5px;
     border: none;
+    margin: 0;
+}
+.cart--inputs > input::-webkit-inner-spin-button{
+    -webkit-appearance:none;
 }
 
-.cart--inputs>button {
+.delete--button {
     width: fit-content;
-    background-color: #f34;
+    background-color: transparent;
     margin: 0;
     display: flex;
-    height: 30px;
-    flex-grow: 1;
+    height: 20px;
     padding: 0;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
     border: none;
+    border-radius: 5px;
+    position: absolute;
+    top: -20%;
+    right: 0;
+}
+.increaseQuantity,.drecreaseQuantity{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 20px;
+    color: #FFF;
+}
+.increaseQuantity{
+    background-color: var(--color--text--menu);
+
+}
+.drecreaseQuantity{
+    background-color: #f34;
+}
+.increaseQuantity > svg{
+    height: 20px;
+}
+.drecreaseQuantity > svg{
+    height: 20px;
 }
 .cart__cuerpo--tr{
 width: 200px;
 
 }
 button>svg {
-
     height: 100%;
-    color: #FFF;
-
+    color: #f34;
 }
 .cart__footer{
     display: flex;
