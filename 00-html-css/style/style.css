@@ -359,10 +359,39 @@ main {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 100%;
+    width: 80vw;
     margin-top: 20px;
+    overflow: hidden;
+    height: 60vh;
+    border-radius: 15px;
 }
+.container_img--carrusel{
+    width: max-content;
+    display: flex;
+    border-radius: 12px;
+    justify-content: center;
+    animation: scroll 15s linear infinite;
+    height: 100%;
+    gap: 5px;
 
+}
+.container_img--carrusel--item{
+    flex: 0 0 30vw;
+    height: 100%;
+}
+.container_img--carrusel--item > img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
 p {
     user-select: none;
 }
