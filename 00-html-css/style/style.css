@@ -1097,7 +1097,7 @@ button {
 
 /*================ANIMACIONES DE BOTONES=======================*/
 /*==========MEDIA QUERIES================*/
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 780px) {
     .header {
         padding: 20px;
         justify-content: space-between;
@@ -1252,7 +1252,9 @@ button {
     .footer {
         flex-direction: column;
     }
-
+    .container_img{
+        height: 50vh;
+    }
     .container_img--title {
         font-size: 35px;
         top: 30%;
