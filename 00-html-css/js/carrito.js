@@ -180,14 +180,13 @@ function showAlert(message,type){
 }
 
 function increase(ProduQuantity){
-    ProduQuantity.value= parseInt(ProduQuantity.value) + 1
+    ProduQuantity.value= parseInt(ProduQuantity.value) + 1;
     const idProd = parseInt(ProduQuantity.dataset.id, 10);
     const product = productsArray.find(prod => prod.id === idProd);
 
     if (product){
         product.quantity = parseInt(ProduQuantity.value);
     }
-
     productsHtml();
     updateTotal();
     saveLocalStorage();
