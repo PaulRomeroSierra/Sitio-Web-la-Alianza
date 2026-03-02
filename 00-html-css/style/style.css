@@ -28,7 +28,9 @@ body {
     position: relative;
     padding: 30px;
 }
-
+h2{
+    text-align: center;
+}
 .header {
     display: flex;
     align-items: center;
@@ -43,7 +45,9 @@ body {
     background-color: var(--background--color--button);
 
 }
-
+.header__title{
+    padding: 15px;
+}
 .header__nav {
     display: flex;
     flex-direction: row;
@@ -58,8 +62,9 @@ body {
 .nav__list {
     display: flex;
     flex-direction: row;
-    margin: 0;
+    margin: 0px;
     padding: 0px;
+    gap: 20px;
 }
 
 .nav__item {
@@ -81,11 +86,12 @@ a>svg {
     font-size: 14px;
     text-align: center;
     width: fit-content;
-    padding: 20px;
     display: flex;
     align-items: center;
     transition: background-color .4s ease;
     height: 100%;
+    padding: 15px;
+    letter-spacing: 1px;
 }
 
 .header__nav--links:hover {
@@ -124,25 +130,30 @@ a>svg {
 
 #container__cart {
     padding: 0;
-    position: relative;
-}
-
-.cart {
     position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: var(--background--color--menu);
-    min-width: 250px;
-    height: fit-content;
-    display: none;
+}
+.container__cart{
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
+}
+.cart {
+    display: flex;
+    background-color: var(--background--color--menu);
+    width: 100%;
+    height: 90vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     padding: 10px;
     border-radius: 14px;
     gap: 10px;
 }
-
+.cart2{
+    display: none;
+}
 .cart__head{
     display: flex;
     flex-direction: row;
@@ -155,14 +166,14 @@ a>svg {
 .cart__head--tr{
     display: flex;
     gap: 5px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 .cart__pago--titulo {
     font-weight: bold;
     color: var(--color--text--menu);
-    width: fit-content;    
+    width: fit-content;
 }
 .cart__pago--titulo > p {
     padding: 0;
@@ -179,9 +190,9 @@ a>svg {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     gap: 5px;
-    width: fit-content;
-    position: relative;
+    width:100%;
 }
 
 .cart--cuerpo {
@@ -189,7 +200,9 @@ a>svg {
     flex-direction: column;
     gap: 15px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 90%;
 }
 
 .cart--img {
@@ -218,6 +231,7 @@ a>svg {
     gap: 0;
     padding: 0;
     height: 30px;
+    position: relative;
 }
 
 .cart--inputs>input {
@@ -237,15 +251,15 @@ a>svg {
 .delete--button {
     width: fit-content;
     background-color: transparent;
-    margin: 0;
-    display: flex;
+    margin-bottom: 15px;
     height: 20px;
     padding: 0;
     border: none;
     border-radius: 5px;
     position: absolute;
-    top: -20%;
-    right: 0;
+    right:0px;
+    top: -30px;
+
 }
 .increaseQuantity,.drecreaseQuantity{
     display: flex;
@@ -314,12 +328,12 @@ button>svg {
 .cart__footer--td > span{
     align-self: flex-end;
 }
-#container__cart{
+/* #container__cart{
     padding: 15px;
-}
-#container__cart:hover>.cart {
+} */
+/* #container__cart:hover>.cart {
     display: flex;
-}
+} */
 #container__cart:focus>.cart {
     display: flex;
 }
@@ -362,7 +376,7 @@ main {
     width: 80vw;
     margin-top: 20px;
     overflow: hidden;
-    height: 60vh;
+    height: 80vh;
     border-radius: 15px;
 }
 .container_img--carrusel{
@@ -384,6 +398,7 @@ main {
     width: 100%;
     height: 100%;
 }
+/*Animacion de Scroll infinito*/
 @keyframes scroll {
     from{
         transform: translateX(0);
@@ -399,8 +414,9 @@ p {
 .container_img>img {
     width: 100%;
     aspect-ratio: 359/258;
-    height: 450px;
+    height: 100%;
     border-radius: 12px;
+    object-fit: cover;
 }
 
 .container_img--title,
@@ -1065,9 +1081,12 @@ button {
 }
 
 .container__oureggs--items {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
+    width: 80%;
+    display: grid;
+    /* flex-direction: row;
+    gap: 12px; */
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
 }
 
 .container__oureggs--img {
@@ -1094,8 +1113,36 @@ button {
     align-self: self-end;
     margin-right: 15px;
 }
-
+.cart__flotante{
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    background-color: var(--background--color--button);
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px black;
+}
+.cart__enlace > svg{
+    display: block;
+    height: 30px;
+    margin: 20px;
+}
+.cart__flotante:active{
+    background-color: var(--background--color--button--hover);
+}
 /*================ANIMACIONES DE BOTONES=======================*/
+button:active{
+    background-color: var(--background--color--button--hover);
+}
+.container_img--button:active{
+    background-color: var(--background--color--button--hover);
+}
+.button__ourproducts:active{
+    background-color: var(--background--color--button--hover);
+}
+.button__ourproducts:active{
+    background-color: var(--background--color--button--hover);
+}
 /*==========MEDIA QUERIES================*/
 @media screen and (max-width: 780px) {
     .header {
@@ -1110,7 +1157,9 @@ button {
         text-align: center;
         align-items: center;
     }
-
+    .container_img{
+        height: 20vh;
+    }
     .container__menu--img {
         display: flex;
         width: 200px;
@@ -1201,7 +1250,12 @@ button {
         justify-content: center;
         color: var(--background--color--button);
     }
-
+    .cart__flotante{
+        display: block;
+    }
+    .cart__enlace > svg{
+        color: #000;
+    }
     #checkbox:checked~.IconMenu2~.nav__menu {
         opacity: 1;
         height: 100vh;
@@ -1219,6 +1273,10 @@ button {
         width: 30px;
         height: 1000px;
         align-self: center;
+    }
+    .cart{
+        top: 175px;
+        right: 0;
     }
     #container__cart{
         display: flex;
