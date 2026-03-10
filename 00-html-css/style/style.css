@@ -559,7 +559,8 @@ button:hover {
     color: rgb(108, 64, 31);
 }
 
-/*=================================================*/
+/*==================ourFarm__title===============================*/
+/*Aqui va a hacer los diseños Inael Rodriguez*/
 .ourFarm__title {
     color: rgb(55, 38, 38);
     font-size: 25px;
@@ -603,7 +604,8 @@ button:hover {
     flex-grow: 1;
 }
 
-/*========================================*/
+/*================container__opinion========================*/
+/*=======Aqui va a hacer los diseño Jhonatan============*/
 .container__opinion {
     display: flex;
     flex-direction: column;
