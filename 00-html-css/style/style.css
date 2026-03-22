@@ -659,17 +659,18 @@ span {
     width: 100vw;
     display: flex;
     justify-content:center;
-    margin-top: 80px;
-    padding: 30px;
+    margin-top: 15%;
+    padding: 40px;
     position: relative;
     z-index: 2000;
     background-color:#f3f4f5;
-;
 }
 .section__footer > svg{
     position: absolute;
     bottom: 100%;
     z-index: -100;
+    width: 100%;
+    margin: 0;
 }
 .footer__articule{
     display: flex;
@@ -709,7 +710,6 @@ span {
 .articule__icon{
     display: flex;
     flex-direction: row;
-    width: 300px;
     gap: 5px;
 }
 .articule__icon > svg{
@@ -1419,5 +1419,28 @@ button:active{
 
     .oureggs--title {
         margin-top: 30px;
+    }
+    /*==============FOOTER================*/
+    .section__footer{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 
+        "alianza alianza"
+        "mapa redes"
+        "contacto contacto";
+        gap: 10px;
+        gap:10px
+    }
+    .section__footer > .articule--1{
+        grid-area: alianza;
+    }
+    .section__footer >.articule--2{
+        grid-area: mapa;
+    }
+    .section__footer > .articule--3{
+        grid-area: contacto;
+    }
+    .section__footer > .articule--4{
+        grid-area: redes;
     }
 }
