@@ -15,6 +15,10 @@
     margin: 0;
     user-select: none;
 }
+a{
+    text-decoration: none;
+    color: var(--text--color);
+}
 
 body {
     display: flex;
@@ -22,7 +26,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    max-width: 1100px;
+    max-width: 1200px;
     background-color: var(--background--color);
     height: 100vh;
     position: relative;
@@ -650,12 +654,79 @@ span {
     font-weight: bold;
     font-size: 16px;
 }
-
+/*================FOOTER===============*/
+.section__footer{
+    width: 100vw;
+    display: flex;
+    justify-content:center;
+    margin-top: 80px;
+    padding: 30px;
+    position: relative;
+    z-index: 2000;
+    background-color:#f3f4f5;
+;
+}
+.section__footer > svg{
+    position: absolute;
+    bottom: 100%;
+    z-index: -100;
+}
+.footer__articule{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: 200px;
+    width: 100%;
+    color: var(--text--color);
+    line-height: 1.5;
+    margin-top: 40px;
+}
+.footer__articule > h4{
+    display: block;
+    color: var(--text--color);
+    border-bottom:3px solid var(--background--color--button);
+    padding: 2px;
+}
+.articule--1{
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.articule--1 > h2{
+    display: block;
+    color: var(--text--color);
+}
+.articule--1 > p{
+    text-align: justify;
+}
+.articule--list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.articule__icon{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    gap: 5px;
+}
+.articule__icon > svg{
+    color:var(--background--color--button);
+}
+.location > svg{
+    height: 30px;
+    width: 40px;
+}
+.redes > svg{
+    color: var(--background--color--button);
+}
 .footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 20px;
+    padding: 30px;
     gap: 12px;
     border-top: 1px solid #0001;
     width: 100%;
@@ -981,10 +1052,11 @@ textarea:focus {
 }
 
 .whatsapp__modal {
-    top: 20%;
-    right: 0%;
+    bottom: 50px;
+    right: 0;
     width: 100px;
     position: fixed;
+    z-index: 10000;
 }
 
 .container__contact>svg {
