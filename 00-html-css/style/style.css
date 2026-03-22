@@ -1371,14 +1371,22 @@ button:active{
     padding-right: 1em;
 }
 .card{
-    flex: 0 0 5em;
-    height: 5em;
+    flex: 0 0 250px;
+    height: 300px;
     padding: 5em;
-    background: blue;
+    background: #eee;
     font-size: 3rem;
-    border-radius: .2em;
-    text-align: center;
-    align-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.card img {
+    width: 100%;        
+    height: 100%;       
+    object-fit: cover;  
 }
 @keyframes spin{
     from {translate: 0;}
