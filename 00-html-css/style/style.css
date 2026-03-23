@@ -478,6 +478,7 @@ button:hover {
     text-align: center;
     justify-content: center;
     margin: 25px;
+    position: relative;
 }
 
 .container__about-us--header {
@@ -682,6 +683,7 @@ span {
     color: var(--text--color);
     line-height: 1.5;
     margin-top: 40px;
+    position: relative;
 }
 .footer__articule > h4{
     display: block;
@@ -694,6 +696,7 @@ span {
     align-items: center;
     justify-content: center;
     font-size: 30px;
+    align-self:self-start;
 }
 .articule--1 > h2{
     display: block;
@@ -753,7 +756,29 @@ span {
     flex-grow: 1;
     color: rgb(149, 114, 69);
 }
+.img__flotantes{
+    position: absolute;
+    width: 200px;
+    filter: drop-shadow(-4px 4px 3px #0005);
 
+}
+.flotante--1{
+    bottom:-40%;
+    left: -40%;
+}
+.flotante--2{
+    bottom: 20%;
+    right: 15%;
+}
+.flotante--3{
+    bottom: 90%;
+    left: 30%;
+}
+.flotante--4{
+    margin: 0;
+    bottom:-20%;
+    width: 250px;
+}
 /*===========================ABOUT US========================*/
 .our_farm {
     display: flex;
@@ -1443,4 +1468,8 @@ button:active{
     .section__footer > .articule--4{
         grid-area: redes;
     }
+    .flotante--2{
+        bottom: 20%;
+        right: 0%;
+}
 }
