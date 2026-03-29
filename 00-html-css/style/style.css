@@ -1215,11 +1215,12 @@ button {
 .cart__flotante{
     display: none;
     position: fixed;
-    bottom: 10%;
+    bottom: 25%;
     right: 5%;
     background-color: var(--background--color--button);
     border-radius: 50%;
     box-shadow: 2px 2px 2px black;
+    z-index: 10000;
 }
 .cart__enlace > svg{
     display: block;
