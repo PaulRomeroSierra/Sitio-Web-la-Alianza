@@ -7,6 +7,7 @@
     --background--color--menu: #FAF4E6;
     --background--color--general: #F5E8C7;
     --color--text--menu: #2E6B3F;
+
 }
 
 * {
@@ -51,11 +52,6 @@ h2 {
     margin: 0;
     background-color: var(--background--color--button);
 
-}
-
-.header__title {
-    padding: 15px;
-    font-family: cursive;
 }
 
 .header__nav {
@@ -399,7 +395,7 @@ button>svg {
 }
 
 #cartCount {
-    color: #fff;
+    color: #030303;
     font-weight: lighter;
 }
 
@@ -1499,162 +1495,96 @@ button:active {
     }
 }
 
-/* Desde aqui comidifico para hacer el slider */
-.carousel {
-    margin: 20px -30px;
-    width: calc(81vw - 17px);
-    border: none;
-    display: flex;
-    overflow: auto;
-    border-radius: 20px;
-    min-width: 100%;
-}
-
-.carousel::-webkit-scrollbar {
-    display: none;
-
-}
-
-.group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    animation: spin 20s infinite linear;
-    padding-right: 0em;
-}
-
-.card {
-    flex: 0 0 400px;
-    height: 584px;
-    padding: 3em;
-    margin: 2px;
-    border-radius: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border: none;
-    /* background: transparent; */
-    border: none;
-
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@keyframes spin {
-    from {
-        translate: 0;
-    }
-
-    to {
-        translate: -100%;
-    }
-}
-
 /* modo oscuro */
-
-:root {
-    --bg: #ffffff;
-    --texto: #1a1a1a;
-    --card: #f5f5f0;
-    --borde: #e0e0d8;
-}
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #0f0f0f;
-        --texto: #f0f0f0;
-        --card: #1c1c1c;
-        --borde: #2e2e2e;
+        --background--color: #0f0f0f;
         --background--color--banner: #2a2020;
         --background--color--menu: #2a2020;
+        --background--color--general: #1a1a1a;
+        --bg: #0f0f0f;
+        --card: #1c1c1c;
+        --borde: #2e2e2e;
+        
 
+        --color--text--menu: #e8a882;
+        --texto: #ffffff;
+        --color--titulo: rgb(255, 251, 200);
+        --color--subtitulo: rgb(255, 251, 200);
+        --color--texto--secundario: #f0f0f0;
+        --color--texto--terciario: #f0f0f0;
+        --color--claro: rgb(255, 251, 200);
+        --color--eggs--titulo: rgb(255, 251, 200);
+        --color--footer--text: rgb(255, 251, 200);
     }
 
     .eggs__item {
         background-color: #2a2020;
     }
 
-    .oureggs--title {
-        color: #2a2020;
+    .header__title {
+        color: #000000;
+        
     }
 
-    .ouregss--price,
-    .our_farm-hitos--title,
-    .items__year,
-    .container__ourvalues--title,
+    .header {
+        background-color: rgb(255, 175, 25)
+    }
+    .cart__pago--titulo,
+    .cart--titulo,
     .container__ourteam-title,
-    .contact__title {
-        color: rgb(255, 251, 200)
-    }
-
-
-
+    .container__img--title,
+    .container__ourvalues--title,
+    .items__year,
+    h2,
+    .container__opinion-title,
+    .cart__footer--td h4,
+    .section__footer h4,
+    .section__footer ol,
+    .section__footer h2,
     .container__about-us--title,
     .container__why-us--title,
     .container__itemUno--title,
     .container__itemDos--title,
     .container__itemTres--title,
     .container__itemCuatro--title,
-    .cart--titulo,
-    .container__img--title,
-    .aurteam__information p,
+    .contact__title,
     .ourFarm__title,
-    .container__opinion-title,
-    .aurteam__information span,
-    .container__location--title,
-    .granja_footer,
+    .ouregss--price,
     .oureggs--title,
     .eggs__item--title,
-    .ouregss--price,
-    .listo_para {
+    .container__opinion span,
+    .aurteam__information span {
         color: rgb(255, 251, 200);
     }
 
-    .items__year,
-    .year--uno,
-    .our_farm-hitos--title,
-    .section__footer h2,
-    h2,
-    h4,
-    .listo,
-    .section__footer h4 {
-        color: rgb(255, 251, 200) !important;
-    }
-
+    .container__location--text,
+    .container__banner--text,
+    .container__img--text,
     .container__itemUno--text,
     .container__itemDos--text,
     .container__itemTres--text,
     .container__itemCuatro--text,
-    .container__img--text,
-    .container__banner--text,
-    .container__location--text,
+    .ouregss--text,
+    .owner,
+    .customers--text,
     .contact__text,
-    span,
-    .ouregss--text {
-        color: #f0f0f0 !important;
+    .footer__items
+    .section__footer,
+    .section__footer p,
+    .section__footer a {
+        color: #ffffff;
     }
 
-    .header__title {
-        color: #000000 !important
+    .cart--precio{
+        color: rgb(255, 251, 200) ;
+        background-color: transparent;
     }
 
-    .cart--precio {
-        background-color: #2a2020;
-        color: #ffffff !important;
+    .increaseQuantity{
+        background-color: green;
     }
-
-    .cart--titulo {
-        color: rgb(255, 251, 200) !important;
-    }
-
-
 }
 
 body {
