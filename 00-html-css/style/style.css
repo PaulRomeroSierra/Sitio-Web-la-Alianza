@@ -519,6 +519,7 @@ button:hover {
     text-align: center;
     justify-content: center;
     margin: 25px;
+    position: relative;
 }
 
 .container__about-us--header {
@@ -701,19 +702,20 @@ span {
 .section__footer {
     width: 100vw;
     display: flex;
-    justify-content: center;
-    margin-top: 80px;
-    padding: 30px;
+    justify-content:center;
+    margin-top: 15%;
+    padding: 40px;
     position: relative;
     z-index: 2000;
-    background-color: var(--bg);
-    ;
+    background-color:#f3f4f5;
 }
 
 .section__footer>svg {
     position: absolute;
     bottom: 100%;
     z-index: -100;
+    width: 100%;
+    margin: 0;
 }
 
 .footer__articule {
@@ -726,6 +728,7 @@ span {
     color: var(--text--color);
     line-height: 1.5;
     margin-top: 40px;
+    position: relative;
 }
 
 .footer__articule>h4 {
@@ -740,6 +743,7 @@ span {
     align-items: center;
     justify-content: center;
     font-size: 30px;
+    align-self:self-start;
 }
 
 .articule--1>h2 {
@@ -760,7 +764,6 @@ span {
 .articule__icon {
     display: flex;
     flex-direction: row;
-    width: 300px;
     gap: 5px;
 }
 
@@ -808,7 +811,29 @@ span {
     flex-grow: 1;
     color: var(--texto);
 }
+.img__flotantes{
+    position: absolute;
+    width: 200px;
+    filter: drop-shadow(-4px 4px 3px #0005);
 
+}
+.flotante--1{
+    bottom:-40%;
+    left: -40%;
+}
+.flotante--2{
+    bottom: 20%;
+    right: 15%;
+}
+.flotante--3{
+    bottom: 90%;
+    left: 30%;
+}
+.flotante--4{
+    margin: 0;
+    bottom:-20%;
+    width: 250px;
+}
 /*===========================ABOUT US========================*/
 .our_farm {
     display: flex;
@@ -1246,11 +1271,12 @@ button {
 .cart__flotante {
     display: none;
     position: fixed;
-    bottom: 10%;
+    bottom: 25%;
     right: 5%;
     background-color: var(--background--color--button);
     border-radius: 50%;
     box-shadow: 2px 2px 2px black;
+    z-index: 10000;
 }
 
 .cart__enlace>svg {
@@ -1493,102 +1519,31 @@ button:active {
     .oureggs--title {
         margin-top: 30px;
     }
+    /*==============FOOTER================*/
+    .section__footer{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 
+        "alianza alianza"
+        "mapa redes"
+        "contacto contacto";
+        gap: 10px;
+        gap:10px
+    }
+    .section__footer > .articule--1{
+        grid-area: alianza;
+    }
+    .section__footer >.articule--2{
+        grid-area: mapa;
+    }
+    .section__footer > .articule--3{
+        grid-area: contacto;
+    }
+    .section__footer > .articule--4{
+        grid-area: redes;
+    }
+    .flotante--2{
+        bottom: 20%;
+        right: 0%;
 }
-
-/* modo oscuro */
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background--color: #0f0f0f;
-        --background--color--banner: #2a2020;
-        --background--color--menu: #2a2020;
-        --background--color--general: #1a1a1a;
-        --bg: #0f0f0f;
-        --card: #1c1c1c;
-        --borde: #2e2e2e;
-        
-
-        --color--text--menu: #e8a882;
-        --texto: #ffffff;
-        --color--titulo: rgb(255, 251, 200);
-        --color--subtitulo: rgb(255, 251, 200);
-        --color--texto--secundario: #f0f0f0;
-        --color--texto--terciario: #f0f0f0;
-        --color--claro: rgb(255, 251, 200);
-        --color--eggs--titulo: rgb(255, 251, 200);
-        --color--footer--text: rgb(255, 251, 200);
-    }
-
-    .eggs__item {
-        background-color: #2a2020;
-    }
-
-    .header__title {
-        color: #000000;
-        
-    }
-
-    .header {
-        background-color: rgb(255, 175, 25)
-    }
-    .cart__pago--titulo,
-    .cart--titulo,
-    .container__ourteam-title,
-    .container__img--title,
-    .container__ourvalues--title,
-    .items__year,
-    h2,
-    .container__opinion-title,
-    .cart__footer--td h4,
-    .section__footer h4,
-    .section__footer ol,
-    .section__footer h2,
-    .container__about-us--title,
-    .container__why-us--title,
-    .container__itemUno--title,
-    .container__itemDos--title,
-    .container__itemTres--title,
-    .container__itemCuatro--title,
-    .contact__title,
-    .ourFarm__title,
-    .ouregss--price,
-    .oureggs--title,
-    .eggs__item--title,
-    .container__opinion span,
-    .aurteam__information span {
-        color: rgb(255, 251, 200);
-    }
-
-    .container__location--text,
-    .container__banner--text,
-    .container__img--text,
-    .container__itemUno--text,
-    .container__itemDos--text,
-    .container__itemTres--text,
-    .container__itemCuatro--text,
-    .ouregss--text,
-    .owner,
-    .customers--text,
-    .contact__text,
-    .footer__items
-    .section__footer,
-    .section__footer p,
-    .section__footer a {
-        color: #ffffff;
-    }
-
-    .cart--precio{
-        color: rgb(255, 251, 200) ;
-        background-color: transparent;
-    }
-
-    .increaseQuantity{
-        background-color: green;
-    }
-}
-
-body {
-    background: var(--bg);
-    color: var(--texto);
-    font-family: sans-serif;
 }
