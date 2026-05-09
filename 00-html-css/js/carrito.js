@@ -14,8 +14,8 @@ function evenlisteners(){
         let mensaje = [];
         if(productsArray.length===0){
             showAlert('No hay productos en el carrito','error');
-            link__wasap.removeAttribute("href")
-            link__wasap.removeAttribute("target")
+            link__wasap.removeAttribute("href");
+            link__wasap.removeAttribute("target");
         }else{
             productsArray.forEach(element =>{
             mensaje.push(`${element.title}🥚\n`)
@@ -36,17 +36,24 @@ function evenlisteners(){
         productsArray=[];
     }
     menu();
+    if (productsArray.length===0){
+        carritoVacioUI();
+    }
 }
 
 function updateCartCount(){
     const cartCount = document.querySelector("#cartCount");
     cartCount.textContent = productsArray.length;
+
 }
 
 function updateTotal(){
     const total = document.querySelector("#total");
     let totalProdu = productsArray.reduce((total,prod)=> total + prod.price * prod.quantity,0);
     total.textContent= `$${totalProdu.toFixed(3)}`;
+    if (productsArray.length===0){
+        carritoVacioUI();
+    }
 }
 
 function getDataElements(e){
@@ -137,10 +144,18 @@ function productsHtml(){
     saveLocalStorage();
 }
 
+
+
+
 function saveLocalStorage(){
     localStorage.setItem('products', JSON.stringify(productsArray))
 }
-
+/**Funcion de carrito vacio */
+function carritoVacioUI(){
+    const empty__car= document.querySelector(".empty__cart");
+    empty__car.style.display="flex";
+    console.log(empty__car)
+}
 function updateQuantity(e){
     const newQuantity=parseInt(e.target.value,10);
     const idProd = parseInt(e.target.dataset.id,10);
@@ -201,7 +216,6 @@ function decrease(ProduQuantity){
             product.quantity = parseInt(ProduQuantity.value);
         }
     }
-
     productsHtml();
     updateTotal();
     saveLocalStorage();
