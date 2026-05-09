@@ -3,7 +3,7 @@
     --background--color--banner: rgb(240, 229, 229);
     --background--color--button: rgb(255, 175, 25);
     --background--color--button--hover: rgb(245, 159, 0);
-    /* --text--color: rgb(55, 38, 38); */
+    --text--color: rgb(55, 38, 38);
     --background--color--menu: #FAF4E6;
     --background--color--general: #F5E8C7;
     --color--text--menu: #2E6B3F;
@@ -704,18 +704,9 @@ span {
     display: flex;
     justify-content:center;
     margin-top: 15%;
-    padding: 40px;
+    height: fit-content;
     position: relative;
     z-index: 2000;
-    background-color:#f3f4f5;
-}
-
-.section__footer>svg {
-    position: absolute;
-    bottom: 100%;
-    z-index: -100;
-    width: 100%;
-    margin: 0;
 }
 
 .footer__articule {
@@ -833,6 +824,12 @@ span {
     margin: 0;
     bottom:-20%;
     width: 250px;
+}
+.footer__img{
+    position:absolute;
+    height: 100%;
+    object-fit: cover;
+    width: 100vw;
 }
 /*===========================ABOUT US========================*/
 .our_farm {
@@ -1546,4 +1543,118 @@ button:active {
         bottom: 20%;
         right: 0%;
 }
+}
+
+/* modo oscuro */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background--color: #0f0f0f;
+        --background--color--banner: #2a2020;
+        --background--color--menu: #2a2020;
+        --background--color--general: #1a1a1a;
+        --bg: #0f0f0f;
+        --card: #1c1c1c;
+        --borde: #2e2e2e;
+        --color--text--menu: #e8a882;
+        --texto: #ffffff;
+        --color--titulo: rgb(255, 251, 200);
+        --color--subtitulo: rgb(255, 251, 200);
+        --color--texto--secundario: #f0f0f0;
+        --color--texto--terciario: #f0f0f0;
+        --color--claro: rgb(255, 251, 200);
+        --color--eggs--titulo: rgb(255, 251, 200);
+        --color--footer--text: rgb(255, 251, 200);
+    }
+
+    .eggs__item {
+        background-color: #2a2020;
+    }
+
+    .header__title {
+        color: #000000;
+        
+    }
+
+    .header {
+        background-color: rgb(255, 175, 25)
+    }
+
+    .cart__pago--titulo,
+    .cart--titulo,
+    .container__ourteam-title,
+    .container__img--title,
+    .container__ourvalues--title,
+    .items__year,
+    .container__opinion-title,
+    .cart__footer--td ,
+    .section__footer ,
+    .section__footer,
+    .section__footer ,
+    .container__about-us--title,
+    .container__why-us--title,
+    .container__itemUno--title,
+    .container__itemDos--title,
+    .container__itemTres--title,
+    .container__itemCuatro--title,
+    .contact__title,
+    .ourFarm__title,
+    .ouregss--price,
+    .oureggs--title,
+    .eggs__item--title,
+    .container__opinion span,
+    .aurteam__information span {
+        color: rgb(255, 251, 200);
+    }
+    .section__footer > .articule--1{
+        grid-area: alianza;
+    }
+
+    .container__location--text,
+    .container__banner--text,
+    .container__img--text,
+    .container__itemUno--text,
+    .container__itemDos--text,
+    .container__itemTres--text,
+    .container__itemCuatro--text,
+    .ouregss--text,
+    .owner,
+    .customers--text,
+    .contact__text,
+    .footer__items
+    .section__footer,
+    .section__footer,
+    .section__footer {
+        color: #ffffff;}
+    .section__footer >.articule--2{
+        grid-area: mapa;
+    }
+
+    .cart--precio{
+        color: rgb(255, 251, 200) ;
+        background-color: transparent;}
+    .section__footer > .articule--3{
+        grid-area: contacto;
+    }
+
+    .increaseQuantity{
+        background-color: green;
+    .section__footer > .articule--4{
+        grid-area: redes;
+    }
+    .flotante--2{
+        bottom: 20%;
+        right: 0%;
+    }
+    }
+/*=====================Footer===============*/
+/* .title__footer,.subtitle__footer{
+    color: var(--color--footer--text);
+} */
+
+}
+body {
+    background: var(--bg);
+    color: var(--texto);
+    font-family: sans-serif;
 }
