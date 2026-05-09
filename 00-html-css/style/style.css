@@ -1545,6 +1545,7 @@ button:active {
 }
 }
 
+
 /* modo oscuro */
 
 @media (prefers-color-scheme: dark) {
@@ -1647,11 +1648,6 @@ button:active {
         right: 0%;
     }
     }
-/*=====================Footer===============*/
-/* .title__footer,.subtitle__footer{
-    color: var(--color--footer--text);
-} */
-
 }
 body {
     background: var(--bg);
