@@ -1305,8 +1305,9 @@ button {
     border: none;
     background-color: var(--background--color--button);
 }
-.title__empty--cart{
+.title__empty--cart, .text__empty--cart{
     text-align: center;
+    color: #000000;
 }
 .btn-comprar > a{
     display: block;
