@@ -1,29 +1,57 @@
-import { menu } from "./module/menu.js";
+// ============================================================
+//  contacto.js  —  Formulario de contacto con Supabase
+//  Cambios: guarda el mensaje en la tabla mensajes_contacto
+//  antes de abrir WhatsApp
+// ============================================================
 
-const linkContact=document.querySelector(".link__send--consult");
-const fomularioContact=document.querySelector(".form");
+import { menu }           from './module/menu.js';
+import { supabaseClient } from './supabase.js';
 
-document.addEventListener('DOMContentLoaded',function(){
-    eventListeners()
-})
+const linkContact      = document.querySelector('.link__send--consult');
+const formularioContact = document.querySelector('.form');
 
-function eventListeners(){
-    fomularioContact.addEventListener('submit',submitCancel)
-    menu()
+document.addEventListener('DOMContentLoaded', function () {
+    eventListeners();
+});
+
+function eventListeners() {
+    formularioContact.addEventListener('submit', submitCancel);
+    menu();
 }
 
-function submitCancel(e){
-    e.preventDefault()
-    let messageWasap="";
-    let inputName= document.querySelector(".input--name");
-    let inputEmail=document.querySelector(".input--email");
-    let inputTextArea=document.querySelector(".input--textarea");
+function submitCancel(e) {
+    e.preventDefault();
 
-    linkContact.addEventListener('click',function(){
-        messageWasap+=`Nombre: ${inputName.value} \n`
-        messageWasap+=`Correo: ${inputEmail.value} \n`
-        messageWasap+=`Mensaje: ${inputTextArea.value} \n`
-        linkContact.target="blank"
-        linkContact.href=`https://api.whatsapp.com/send?phone=573105103893&text=${messageWasap}`
-    })
+    const inputName     = document.querySelector('.input--name');
+    const inputEmail    = document.querySelector('.input--email');
+    const inputTextArea = document.querySelector('.input--textarea');
+
+    linkContact.addEventListener('click', async function () {
+        const nombre  = inputName.value.trim();
+        const email   = inputEmail.value.trim();
+        const mensaje = inputTextArea.value.trim();
+
+        // Guardar en Supabase
+        await guardarMensajeContacto(nombre, email, mensaje);
+
+        // Abrir WhatsApp igual que antes
+        const messageWasap =
+            `Nombre: ${nombre} \nCorreo: ${email} \nMensaje: ${mensaje} \n`;
+        linkContact.target = 'blank';
+        linkContact.href   = `https://api.whatsapp.com/send?phone=573105103893&text=${encodeURIComponent(messageWasap)}`;
+    });
+}
+
+async function guardarMensajeContacto(nombre, email, mensaje) {
+    try {
+        const { error } = await supabaseClient
+            .from('mensajes_contacto')
+            .insert({ nombre, email, mensaje });
+
+        if (error) throw error;
+
+        console.log('✅ Mensaje de contacto guardado en Supabase');
+    } catch (err) {
+        console.error('❌ Error guardando mensaje de contacto:', err.message);
+    }
 }
