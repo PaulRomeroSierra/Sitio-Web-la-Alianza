@@ -125,7 +125,7 @@ async function guardarPedidoEnSupabase() {
         if (error) throw error;
 
         console.log('✅ Pedido guardado en Supabase con ID:', data);
-        showAlert(`Pedido #${data} registrado con éxito`, 'success');
+        showAlert(`Pedido registrado con éxito`, 'success');
         return data;   // devuelve el id del pedido
 
     } catch (err) {
